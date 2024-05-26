@@ -73,3 +73,18 @@ class Visibility_solde extends BlocEvent {
     solde
   ];
 }
+
+//.......................visibilite des sevices...................................
+// ignore: must_be_immutable, camel_case_types
+class Visibility_services extends BlocEvent {
+  Widget service;
+
+  Visibility_services({
+    required this.service,
+  });
+
+  @override
+  List<Object> get props => [
+    service
+  ];
+}

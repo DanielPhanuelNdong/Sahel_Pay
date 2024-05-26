@@ -40,127 +40,139 @@ class _AcceuilState extends State<Acceuil> {
       ),
       body: BlocBuilder<BlocBloc3, Barre_navigation_satate>(
         builder: (context, state) {
-          return PageView.builder(
-            controller: PageController(initialPage: current_index),
-            itemCount: 3,
-            itemBuilder: (context, index) => state.element_body,
-            onPageChanged: (value) {
-              if (current_index != value) {
-                current_index = value;
-              }
-              context.read<BlocBloc3>().add(Barre_navigation(
-                  element_body: ElementsBody[current_index],
-                  element_appbar: ElementsAppbar[current_index]));
-            },
-          );
+          return state.element_body;
           //state.element_body;
         },
       ),
 
       //............................................barre de navigation
-      bottomNavigationBar: BottomAppBar(
-          //padding: EdgeInsets.symmetric(vertical: 20),
-          color: const Color(0xFFAF1C04),
-          shape: const CircularNotchedRectangle(),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
-                selector: (state) {
-                  return state.element_body is HomePage;
-                  // if(state.element_body == const HomePage() && state.element_appbar == appbar_home()){
-                  //   return 1;
-                  // }else{
-                  //   return 0;
-                  // }
-                },
-                //(state) => state.element_body == const HomePage() ? true:false,
-                builder: (context, isSelected) {
-                  return IconButton(
-                    color: isSelected
-                        ? Colors.white
-                        : const Color.fromARGB(255, 0, 0, 0),
-                    onPressed: () {
-                      context.read<BlocBloc3>().add(Barre_navigation(
-                          element_body: const HomePage(),
-                          element_appbar: appbar_home()));
-                    },
-                    icon: const Icon(Icons.home, size: 35),
-                    //isSelected: true,
-                  );
-                },
-              ),
-              const SizedBox(
-                width: 70,
-              ),
-              BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
-                selector: (state) {
-                  return state.element_body is Historiques;
-                  // if(state.element_body == const Historiques() && state.element_appbar == appbar_historiques()){
-                  //   return 1;
-                  // }else{
-                  //   return 0;
-                  // }
-                },
-                //(state) => state.element_body == const HomePage() ? true:false,
-                builder: (context, isSelected) {
-                  return IconButton(
-                    color: isSelected
-                        ? Colors.white
-                        : const Color.fromARGB(255, 0, 0, 0),
-                    onPressed: () {
-                      context.read<BlocBloc3>().add(Barre_navigation(
-                          element_body: const Historiques(),
-                          element_appbar: appbar_historiques()));
-                    },
-                    icon: const Icon(
-                      Icons.list,
-                      size: 35,
-                    ),
-                    //isSelected: true,
-                  );
-                },
-              ),
-              const SizedBox(
-                width: 70,
-              ),
-              BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
-                selector: (state) {
-                  return state.element_body is Reglages;
-                  // var valeur1 = state.element_body;
-                  // var valeur2 = state.element_appbar;
-                  // if(valeur1 == Reglages && valeur2 == appbar_reglages){
-                  //   return 1;
-                  // }else{
-                  //   return 0;
-                  // }
-                },
-                //(state) => state.element_body == const HomePage() ? true:false,
-                builder: (context, isSelected) {
-                  return IconButton(
-                    color: isSelected
-                        ? Colors.white
-                        : const Color.fromARGB(255, 0, 0, 0),
-                    onPressed: () {
-                      context.read<BlocBloc3>().add(Barre_navigation(
-                          element_body: const Reglages(),
-                          element_appbar: appbar_reglages()));
-                    },
-                    icon: const Icon(Icons.settings),
-                  );
-                },
-              ),
-            ],
-          )),
+      bottomNavigationBar: Container(
+        height: 97,
+        child: BottomAppBar(
+            //padding: EdgeInsets.symmetric(vertical: 20),
+            color: const Color(0xFFAF1C04),
+            shape: const CircularNotchedRectangle(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                //accueil
+                BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
+                  selector: (state) {
+                    return state.element_body is HomePage;
+                  },
+                  builder: (context, isSelected) {
+                    return Column(
+                      children: [
+                        IconButton(
+                          color: isSelected
+                              ? Colors.white
+                              : const Color.fromARGB(255, 0, 0, 0),
+                          onPressed: () {
+                            context.read<BlocBloc3>().add(Barre_navigation(
+                                element_body: const HomePage(),
+                                element_appbar: appbar_home()));
+                          },
+                          icon: Icon(Icons.home, size: isSelected ? 35:25),
+                          //isSelected: true,
+                        ),
+                        Visibility(
+                            visible: isSelected ? true : false,
+                            child: const Text(
+                              'Accueil',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ))
+                      ],
+                    );
+                  },
+                ),
+                //Sizedbox
+                const SizedBox(
+                  width: 70,
+                ),
 
-          //.....................................bouton flottant
+                //Historiques
+                BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
+                  selector: (state) {
+                    return state.element_body is Historiques;
+                  },
+                  builder: (context, isSelected) {
+                    return Column(
+                      children: [
+                        IconButton(
+                          color: isSelected
+                              ? Colors.white
+                              : const Color.fromARGB(255, 0, 0, 0),
+                          onPressed: () {
+                            context.read<BlocBloc3>().add(Barre_navigation(
+                                element_body: const Historiques(),
+                                element_appbar: appbar_historiques()));
+                          },
+                          icon: Icon(
+                            Icons.list,
+                            size: isSelected ? 35:25,
+                          ),
+                          //isSelected: true,
+                        ),
+                        Visibility(
+                            visible: isSelected ? true : false,
+                            child: const Text('Historiques',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold)))
+                      ],
+                    );
+                  },
+                ),
+                const SizedBox(
+                  width: 70,
+                ),
+                BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
+                  selector: (state) {
+                    return state.element_body is Reglages;
+                  },
+                  builder: (context, isSelected) {
+                    return Column(
+                      children: [
+                        IconButton(
+                          color: isSelected
+                              ? Colors.white
+                              : const Color.fromARGB(255, 0, 0, 0),
+                          onPressed: () {
+                            context.read<BlocBloc3>().add(Barre_navigation(
+                                element_body: const Reglages(),
+                                element_appbar: appbar_reglages()));
+                          },
+                          icon: Icon(
+                            Icons.settings,
+                            size: isSelected ? 35:25,
+                            ),
+                        ),
+                        Visibility(
+                            visible: isSelected ? true : false,
+                            child: const Text(
+                              'Réglages',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ))
+                      ],
+                    );
+                  },
+                ),
+              ],
+            )),
+      ),
+
+      //.....................................bouton flottant
       floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         onPressed: () {
           Get.bottomSheet(
-            //backgroundColor: Colors.transparent,
-            //barrierColor: Colors..withOpacity(.5),
+              //backgroundColor: Colors.transparent,
+              //barrierColor: Colors..withOpacity(.5),
               //clipBehavior: ,
               persistent: false,
               // enterBottomSheetDuration: const Duration(seconds: 2),
@@ -176,14 +188,10 @@ class _AcceuilState extends State<Acceuil> {
                           //.......scanner QR
                           Column(
                             children: [
-                              
                               FloatingActionButton(
                                 backgroundColor: const Color(0xFFAF1C04),
                                 onPressed: () {},
-                                child: const Icon(
-                                  Icons.wind_power_sharp,
-                                  color: Colors.white,
-                                ),
+                                child: Image.asset('images/QR_Code.png')
                               ),
                               const SizedBox(
                                 height: 5,
@@ -205,10 +213,10 @@ class _AcceuilState extends State<Acceuil> {
                               FloatingActionButton(
                                 backgroundColor: const Color(0xFFAF1C04),
                                 onPressed: () {},
-                                child: const Icon(
-                                  Icons.wind_power,
-                                  color: Colors.white,
-                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset('images/transactions.png'),
+                                )
                               ),
                               const SizedBox(
                                 height: 5,
@@ -277,7 +285,10 @@ class _AcceuilState extends State<Acceuil> {
             }
           });
         },
-        child: const Icon(Icons.window, color: Color(0xFF045B0D),),
+        child: const Icon(
+          Icons.window,
+          color: Color(0xFF045B0D),
+        ),
       ),
     );
   }

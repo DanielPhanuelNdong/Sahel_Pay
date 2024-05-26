@@ -3,6 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:sahel_pay/Acceuil/home.dart';
+import 'package:sahel_pay/Acceuil/services/transactions.dart';
 
 part 'bloc_event.dart';
 part 'bloc_state.dart';
@@ -58,8 +59,8 @@ class BlocBloc3 extends Bloc<Barre_navigation, Barre_navigation_satate> {
 }
 
 
-//.................visibilité du mot de passe.............................
-//bloc1 pour la visibilité du mot de passe
+//.................visibilité du solde.............................
+//bloc1 pour la visibilité du solde
 class BlocBloc4 extends Bloc<Visibility_solde, Visibility_solde_state> {
   BlocBloc4()
       : super(
@@ -75,6 +76,20 @@ class BlocBloc4 extends Bloc<Visibility_solde, Visibility_solde_state> {
       }
 
       emit(Visibility_solde_state(solde: event.solde));
+    });
+  }
+}
+
+
+//................visibilite des sevices..............................
+//bloc1 pour la visibilite des sevices
+class BlocBloc5 extends Bloc<Visibility_services, Visibility_services_state> {
+  BlocBloc5()
+      : super(
+          Visibility_services_state(service: Transactions()),
+        ) {
+    on<Visibility_services>((event, emit) {
+      emit(Visibility_services_state(service: event.service));
     });
   }
 }

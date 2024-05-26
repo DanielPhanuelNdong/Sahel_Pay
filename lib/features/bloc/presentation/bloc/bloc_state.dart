@@ -70,3 +70,17 @@ class Visibility_solde_state extends BlocState {
 
 
 }
+
+//.......................visibilite des sevices...................................
+class Visibility_services_state extends BlocState {
+  Widget service;
+
+  Visibility_services_state({
+    required this.service,
+  });
+
+  @override
+  List<Object> get props => [
+    service
+  ];
+}
