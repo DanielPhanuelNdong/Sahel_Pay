@@ -30,7 +30,7 @@ class _AcceuilState extends State<Acceuil> {
       appBar: AppBar(
         // elevation: 5,
         // shadowColor: Colors.black.withOpacity(.2),
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xFF007549),
         centerTitle: true,
         title: BlocBuilder<BlocBloc3, Barre_navigation_satate>(
           builder: (context, state) {
@@ -49,8 +49,10 @@ class _AcceuilState extends State<Acceuil> {
       bottomNavigationBar: Container(
         height: 97,
         child: BottomAppBar(
+          elevation: 3,
+          shadowColor: Colors.black,
             //padding: EdgeInsets.symmetric(vertical: 20),
-            color: const Color(0xFFAF1C04),
+            color: const Color(0xFF007549),
             shape: const CircularNotchedRectangle(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -66,13 +68,13 @@ class _AcceuilState extends State<Acceuil> {
                         IconButton(
                           color: isSelected
                               ? Colors.white
-                              : const Color.fromARGB(255, 0, 0, 0),
+                              : const Color(0xFFc75c0c),
                           onPressed: () {
                             context.read<BlocBloc3>().add(Barre_navigation(
                                 element_body: const HomePage(),
                                 element_appbar: appbar_home()));
                           },
-                          icon: Icon(Icons.home, size: isSelected ? 35:25),
+                          icon: Icon(Icons.home, size: isSelected ? 35:30),
                           //isSelected: true,
                         ),
                         Visibility(
@@ -103,7 +105,7 @@ class _AcceuilState extends State<Acceuil> {
                         IconButton(
                           color: isSelected
                               ? Colors.white
-                              : const Color.fromARGB(255, 0, 0, 0),
+                              : const Color(0xFFc75c0c),
                           onPressed: () {
                             context.read<BlocBloc3>().add(Barre_navigation(
                                 element_body: const Historiques(),
@@ -138,7 +140,7 @@ class _AcceuilState extends State<Acceuil> {
                         IconButton(
                           color: isSelected
                               ? Colors.white
-                              : const Color.fromARGB(255, 0, 0, 0),
+                              : const Color(0xFFc75c0c),
                           onPressed: () {
                             context.read<BlocBloc3>().add(Barre_navigation(
                                 element_body: const Reglages(),
@@ -189,7 +191,7 @@ class _AcceuilState extends State<Acceuil> {
                           Column(
                             children: [
                               FloatingActionButton(
-                                backgroundColor: const Color(0xFFAF1C04),
+                                backgroundColor: const Color(0xFF007549),
                                 onPressed: () {},
                                 child: Image.asset('images/QR_Code.png')
                               ),
@@ -211,12 +213,9 @@ class _AcceuilState extends State<Acceuil> {
                           Column(
                             children: [
                               FloatingActionButton(
-                                backgroundColor: const Color(0xFFAF1C04),
+                                backgroundColor: const Color(0xFF007549),
                                 onPressed: () {},
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Image.asset('images/transactions.png'),
-                                )
+                                child: Image.asset('images/transactions.png')
                               ),
                               const SizedBox(
                                 height: 5,
@@ -236,12 +235,9 @@ class _AcceuilState extends State<Acceuil> {
                           Column(
                             children: [
                               FloatingActionButton(
-                                backgroundColor: const Color(0xFFAF1C04),
+                                backgroundColor: const Color(0xFF007549),
                                 onPressed: () {},
-                                child: const Icon(
-                                  Icons.wind_power,
-                                  color: Colors.white,
-                                ),
+                                child: Image.asset('images/assurrance.png')
                               ),
                               const SizedBox(
                                 height: 5,
@@ -287,7 +283,7 @@ class _AcceuilState extends State<Acceuil> {
         },
         child: const Icon(
           Icons.window,
-          color: Color(0xFF045B0D),
+          color: Color(0xFF007549),
         ),
       ),
     );

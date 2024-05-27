@@ -88,3 +88,18 @@ class Visibility_services extends BlocEvent {
     service
   ];
 }
+
+//.......................Nodes d'envoie...................................
+// ignore: must_be_immutable, camel_case_types
+class Modes_envoie extends BlocEvent {
+ String mode;
+  Modes_envoie({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+

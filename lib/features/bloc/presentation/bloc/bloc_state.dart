@@ -84,3 +84,16 @@ class Visibility_services_state extends BlocState {
     service
   ];
 }
+
+//.......................Nodes d'envoie...................................
+class Modes_envoie_state extends BlocState {
+ String mode;
+  Modes_envoie_state({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}

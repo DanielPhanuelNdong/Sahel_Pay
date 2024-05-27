@@ -16,5 +16,9 @@ class _HistoriquesState extends State<Historiques> {
 
 // ignore: non_constant_identifier_names
 Widget appbar_historiques(){
-  return const Text('Historiques');
+  return const Text('Historiques', style: TextStyle(
+    color: Color.fromARGB(255, 255, 255, 255),
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+  ),);
 }

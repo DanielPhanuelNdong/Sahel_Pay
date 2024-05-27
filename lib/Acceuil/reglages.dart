@@ -16,5 +16,9 @@ class _ReglagesState extends State<Reglages> {
 
 // ignore: non_constant_identifier_names
 Widget appbar_reglages(){
-  return const Text('Réglages');
+  return const Text('Réglages', style: TextStyle(
+    color: Color.fromARGB(255, 255, 255, 255),
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+  ),);
 }

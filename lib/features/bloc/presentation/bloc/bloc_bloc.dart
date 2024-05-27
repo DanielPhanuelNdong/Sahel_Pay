@@ -93,3 +93,15 @@ class BlocBloc5 extends Bloc<Visibility_services, Visibility_services_state> {
     });
   }
 }
+
+//.......................Nodes d'envoie...................................
+class BlocBloc6 extends Bloc<Modes_envoie, Modes_envoie_state> {
+  BlocBloc6()
+      : super(
+          Modes_envoie_state(mode: 'Mobile Money'),
+        ) {
+    on<Modes_envoie>((event, emit) {
+      emit(Modes_envoie_state(mode: event.mode));
+    });
+  }
+}
