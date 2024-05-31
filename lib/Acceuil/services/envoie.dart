@@ -23,14 +23,6 @@ class _envoieState extends State<envoie> {
   ];
 
   String current_option = "";
-  
-  
-
-  @override
-  void initState() {
-    current_option = mode_transfert[0];
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

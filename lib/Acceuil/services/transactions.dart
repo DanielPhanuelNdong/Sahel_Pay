@@ -9,7 +9,17 @@ class Transactions extends StatefulWidget {
 class _TransactionsState extends State<Transactions> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Transactions'),);
+    return const Center(
+      child: Column(
+        children: [
+          //sizedbox
+          SizedBox(
+            height: 20,
+          ),
+          Text('Vos dernières transactions', style: TextStyle(color: Color(0xFFc75c0c),fontSize: 20, fontWeight: FontWeight.bold),)
+        ],
+      )
+      );
   }
 }
 

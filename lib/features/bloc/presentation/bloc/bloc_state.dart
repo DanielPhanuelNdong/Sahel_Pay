@@ -97,3 +97,66 @@ class Modes_envoie_state extends BlocState {
     mode
   ];
 }
+
+//.......................Nodes de retrait...................................
+class Modes_retrait_state extends BlocState {
+ String mode;
+  Modes_retrait_state({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+
+//.......................Achat Unités...................................
+class Achat_Unites_State extends BlocState {
+ String mode;
+  Achat_Unites_State({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+
+class reseau_Achat_Unites_State extends BlocState {
+ String reseau;
+  reseau_Achat_Unites_State({
+    required this.reseau,
+  });
+
+  @override
+  List<Object> get props => [
+    reseau
+  ];
+}
+
+//.......................Paiement factures....................................
+class Paiement_factures_State extends BlocState {
+ String mode;
+  Paiement_factures_State({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+
+class ressources_Paiement_factures_State extends BlocState {
+ String ressources;
+  ressources_Paiement_factures_State({
+    required this.ressources,
+  });
+
+  @override
+  List<Object> get props => [
+    ressources
+  ];
+}

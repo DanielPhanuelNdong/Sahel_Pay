@@ -24,7 +24,12 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(create: (context) => BlocBloc4()),
           BlocProvider(create: (context) => BlocBloc5(),),
-          BlocProvider(create: (context) => BlocBloc6(),)
+          BlocProvider(create: (context) => BlocBloc6(),),
+          BlocProvider(create: (context) => BlocBloc7(),),
+          BlocProvider(create: (context) => BlocBloc8(),),
+          BlocProvider(create: (context) => BlocBloc9(),),
+          BlocProvider(create: (context) => BlocBloc10(),),
+          BlocProvider(create: (context) => BlocBloc11(),)
         ],
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,

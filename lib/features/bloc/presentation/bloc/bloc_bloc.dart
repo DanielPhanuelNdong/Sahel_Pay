@@ -105,3 +105,61 @@ class BlocBloc6 extends Bloc<Modes_envoie, Modes_envoie_state> {
     });
   }
 }
+
+//.......................Nodes de retrait...................................
+class BlocBloc7 extends Bloc<Modes_retrait, Modes_retrait_state> {
+  BlocBloc7()
+      : super(
+          Modes_retrait_state(mode: 'Agent '),
+        ) {
+    on<Modes_retrait>((event, emit) {
+      emit(Modes_retrait_state(mode: event.mode));
+    });
+  }
+}
+
+//.......................Achat Unités...................................
+class BlocBloc8 extends Bloc<Achat_Unites, Achat_Unites_State> {
+  BlocBloc8()
+      : super(
+          Achat_Unites_State(mode: 'Mobile Money'),
+        ) {
+    on<Achat_Unites>((event, emit) {
+      emit(Achat_Unites_State(mode: event.mode));
+    });
+  }
+}
+
+class BlocBloc9 extends Bloc<reseau_Achat_Unites, reseau_Achat_Unites_State> {
+  BlocBloc9()
+      : super(
+          reseau_Achat_Unites_State(reseau: 'MTN'),
+        ) {
+    on<reseau_Achat_Unites>((event, emit) {
+      emit(reseau_Achat_Unites_State(reseau: event.reseau));
+    });
+  }
+}
+
+//.......................Paiement factures....................................
+class BlocBloc10 extends Bloc<Paiement_factures, Paiement_factures_State> {
+  BlocBloc10()
+      : super(
+          Paiement_factures_State(mode: 'Mobile Money'),
+        ) {
+    on<Paiement_factures>((event, emit) {
+      emit(Paiement_factures_State(mode: event.mode));
+    });
+  }
+}
+
+class BlocBloc11 extends Bloc<ressources_Paiement_factures, ressources_Paiement_factures_State> {
+  BlocBloc11()
+      : super(
+          ressources_Paiement_factures_State(ressources: 'Eau'),
+        ) {
+    on<ressources_Paiement_factures>((event, emit) {
+      emit(ressources_Paiement_factures_State(ressources: event.ressource));
+    });
+  }
+}

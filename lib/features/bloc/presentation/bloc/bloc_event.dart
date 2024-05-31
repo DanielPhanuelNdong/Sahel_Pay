@@ -103,3 +103,69 @@ class Modes_envoie extends BlocEvent {
   ];
 }
 
+//.......................Nodes de retrait...................................
+// ignore: must_be_immutable, camel_case_types
+class Modes_retrait extends BlocEvent {
+ String mode;
+  Modes_retrait({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+
+//.......................Achat Unités...................................
+// ignore: must_be_immutable, camel_case_types
+class Achat_Unites extends BlocEvent {
+ String mode;
+  Achat_Unites({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+// ignore: camel_case_types, must_be_immutable
+class reseau_Achat_Unites extends BlocEvent {
+ String reseau;
+  reseau_Achat_Unites({
+    required this.reseau,
+  });
+
+  @override
+  List<Object> get props => [
+    reseau
+  ];
+}
+
+//.......................Paiement factures....................................
+// ignore: must_be_immutable, camel_case_types
+class Paiement_factures extends BlocEvent {
+ String mode;
+  Paiement_factures({
+    required this.mode,
+  });
+
+  @override
+  List<Object> get props => [
+    mode
+  ];
+}
+// ignore: camel_case_types, must_be_immutable
+class ressources_Paiement_factures extends BlocEvent {
+ String ressource;
+  ressources_Paiement_factures({
+    required this.ressource,
+  });
+
+  @override
+  List<Object> get props => [
+    ressource
+  ];
+}
+
