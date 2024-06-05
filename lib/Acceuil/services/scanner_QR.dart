@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
-class effectuer_payement extends StatefulWidget {
-  const effectuer_payement({super.key});
+import 'package:flutter/services.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+class Scanner_QR extends StatefulWidget {
+  const Scanner_QR({super.key});
 
   @override
-  State<effectuer_payement> createState() => _effectuer_payementState();
+  State<Scanner_QR> createState() => _effectuer_payementState();
 }
 
-class _effectuer_payementState extends State<effectuer_payement> {
+class _effectuer_payementState extends State<Scanner_QR> {
+
+  // ignore: unused_field
+  String _BarcodeResult = '';
   @override
   Widget build(BuildContext context) {
     return
     //bouton Effectuer payement.........................................
         Center(
           child: GestureDetector(
-            onTap: () {},
+            onTap: () {
+              QRCodeScan();
+            },
             child: Container(
               height: 50,
               width: 200,
@@ -40,6 +48,24 @@ class _effectuer_payementState extends State<effectuer_payement> {
             ),
           ),
         );
+  }
+
+  // ignore: non_constant_identifier_names
+  void QRCodeScan() async {
+    String QRCode;
+    try {
+      QRCode = await FlutterBarcodeScanner.scanBarcode(
+          "#ff6666", // Scan line color
+          "Cancel", // Cancel button text
+          true, // Whether to use the rear camera
+          ScanMode.QR);
+    } on PlatformException {
+      QRCode = 'Echec PlatformException';
+    }
+
+    setState(() {
+      _BarcodeResult = QRCode;
+    });
   }
 }
 

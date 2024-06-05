@@ -39,7 +39,7 @@ class _nameState extends State<Reset> {
                   textAlign: TextAlign.center,
                   'Réinitialisation du mot de passe',
                   style: TextStyle(
-                    color: Color.fromARGB(255, 1, 126, 59),
+                    color: Color(0xFF007549),
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     //color: Color.fromARGB(255, 0, 0, 0)
@@ -57,7 +57,7 @@ class _nameState extends State<Reset> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 20,
-                    color: Color(0xffFB5606),
+                    color: Color(0xFFc75c0c),
                   ),
                 ),
 
@@ -77,10 +77,10 @@ class _nameState extends State<Reset> {
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: state.obscure,
                     decoration: InputDecoration(
-                      suffixIconColor: const Color(0xffFB5606),
+                      suffixIconColor: const Color(0xFFc75c0c),
                       errorBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffFB5606))),
-                      errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                          borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                      errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                       labelStyle: Theme.of(context).textTheme.bodyMedium,
                       focusColor: Theme.of(context).primaryColor,
                       border: UnderlineInputBorder(
@@ -128,10 +128,10 @@ class _nameState extends State<Reset> {
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: state.obscure,
                     decoration: InputDecoration(
-                      suffixIconColor: const Color(0xffFB5606),
+                      suffixIconColor: const Color(0xFFc75c0c),
                       errorBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffFB5606))),
-                      errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                          borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                      errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                       labelStyle: Theme.of(context).textTheme.bodyMedium,
                       focusColor: Theme.of(context).primaryColor,
                       border: UnderlineInputBorder(
@@ -177,20 +177,20 @@ class _nameState extends State<Reset> {
                       Get.defaultDialog(
                         title: "Confirmation",
                         titleStyle: const TextStyle(
-                          color: Color.fromARGB(255, 1, 126, 59),
+                          color: Color(0xFF007549),
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
                         middleText:
                             'Voulez-vous vraiment modifier votre mot de passe ?',
                         middleTextStyle: const TextStyle(
-                          color: Color(0xffFB5606),
+                          color: Color(0xFFc75c0c),
                         ),
                         textCancel: 'Non',
                         //cancelTextColor: const Color.fromARGB(255, 1, 126, 59),
                         textConfirm: 'Oui',
                         //confirmTextColor: const Color.fromARGB(255, 1, 126, 59),
-                        buttonColor: const Color.fromARGB(255, 1, 126, 59),
+                        buttonColor: const Color(0xFF007549),
 
                         onConfirm: () {
                           Get.snackbar(
@@ -210,11 +210,11 @@ class _nameState extends State<Reset> {
                     width: 300,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 1, 126, 59),
+                        color: Color(0xFF007549),
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 1, 126, 59),
+                            color: Color(0xFF007549),
                             blurRadius: 2,
                             offset: Offset(0, 4),
                             spreadRadius: 1,

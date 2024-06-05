@@ -160,3 +160,16 @@ class ressources_Paiement_factures_State extends BlocState {
     ressources
   ];
 }
+
+//.......................stockage de la confirmation de retrait....................................
+class retrait_confirm_state extends BlocState{
+bool val = false;
+  retrait_confirm_state({
+    required this.val,
+  });
+
+  @override
+  List<Object> get props => [
+    val
+  ];
+}

@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, camel_case_types
+
 part of 'bloc_bloc.dart';
 
 abstract class BlocEvent extends Equatable {
@@ -8,7 +10,6 @@ abstract class BlocEvent extends Equatable {
 }
 
 //.................visibilité du mot de passe.............................
-// ignore: must_be_immutable
 class Visibility_passe extends BlocEvent {
   var vise;
   var obscure;
@@ -28,7 +29,6 @@ class Visibility_passe extends BlocEvent {
 }
 
 //...........................se souvenir de moi ................................
-// ignore: must_be_immutable
 class se_souvenir extends BlocEvent {
   var value;
   se_souvenir({
@@ -43,7 +43,6 @@ class se_souvenir extends BlocEvent {
 }
 
 //............................Barre de navigation .................................
-// ignore: must_be_immutable, camel_case_types
 class Barre_navigation extends BlocEvent {
   var element_body;
   var element_appbar;
@@ -60,7 +59,6 @@ class Barre_navigation extends BlocEvent {
 }
 
 //.................visibilité du solde.............................
-// ignore: must_be_immutable
 class Visibility_solde extends BlocEvent {
   var solde;
 
@@ -75,7 +73,6 @@ class Visibility_solde extends BlocEvent {
 }
 
 //.......................visibilite des sevices...................................
-// ignore: must_be_immutable, camel_case_types
 class Visibility_services extends BlocEvent {
   Widget service;
 
@@ -90,7 +87,6 @@ class Visibility_services extends BlocEvent {
 }
 
 //.......................Nodes d'envoie...................................
-// ignore: must_be_immutable, camel_case_types
 class Modes_envoie extends BlocEvent {
  String mode;
   Modes_envoie({
@@ -104,7 +100,6 @@ class Modes_envoie extends BlocEvent {
 }
 
 //.......................Nodes de retrait...................................
-// ignore: must_be_immutable, camel_case_types
 class Modes_retrait extends BlocEvent {
  String mode;
   Modes_retrait({
@@ -118,7 +113,6 @@ class Modes_retrait extends BlocEvent {
 }
 
 //.......................Achat Unités...................................
-// ignore: must_be_immutable, camel_case_types
 class Achat_Unites extends BlocEvent {
  String mode;
   Achat_Unites({
@@ -130,7 +124,6 @@ class Achat_Unites extends BlocEvent {
     mode
   ];
 }
-// ignore: camel_case_types, must_be_immutable
 class reseau_Achat_Unites extends BlocEvent {
  String reseau;
   reseau_Achat_Unites({
@@ -144,7 +137,6 @@ class reseau_Achat_Unites extends BlocEvent {
 }
 
 //.......................Paiement factures....................................
-// ignore: must_be_immutable, camel_case_types
 class Paiement_factures extends BlocEvent {
  String mode;
   Paiement_factures({
@@ -156,7 +148,6 @@ class Paiement_factures extends BlocEvent {
     mode
   ];
 }
-// ignore: camel_case_types, must_be_immutable
 class ressources_Paiement_factures extends BlocEvent {
  String ressource;
   ressources_Paiement_factures({
@@ -169,3 +160,16 @@ class ressources_Paiement_factures extends BlocEvent {
   ];
 }
 
+//.......................stockage de la confirmation de retrait....................................
+class retrait_confirm extends BlocEvent {
+bool val = false;
+  retrait_confirm({
+    required this.val,
+  });
+
+  @override
+  List<Object> get props => [
+    val
+  ];
+
+}

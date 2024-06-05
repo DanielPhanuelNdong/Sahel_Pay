@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => BlocBloc8(),),
           BlocProvider(create: (context) => BlocBloc9(),),
           BlocProvider(create: (context) => BlocBloc10(),),
-          BlocProvider(create: (context) => BlocBloc11(),)
+          BlocProvider(create: (context) => BlocBloc11(),),
+          BlocProvider(create: (context) => BlocBloc12(),)
         ],
         child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
@@ -37,8 +38,8 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             textTheme: const TextTheme(),
             colorScheme:
-                ColorScheme.fromSeed(seedColor: const Color(0xFFFB5606)),
-            primaryColor: const Color(0xFF045B0D),
+                ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 251, 251, 251)),
+            primaryColor: const Color.fromARGB(255, 255, 255, 255),
             useMaterial3: true,
           ),
           home: const Sign_in(),

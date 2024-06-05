@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:sahel_pay/Acceuil/index.dart';
@@ -49,8 +51,8 @@ class _AcceuilState extends State<Acceuil> {
       bottomNavigationBar: Container(
         height: 97,
         child: BottomAppBar(
-          elevation: 3,
-          shadowColor: Colors.black,
+            elevation: 3,
+            shadowColor: Colors.black,
             //padding: EdgeInsets.symmetric(vertical: 20),
             color: const Color(0xFF007549),
             shape: const CircularNotchedRectangle(),
@@ -74,7 +76,7 @@ class _AcceuilState extends State<Acceuil> {
                                 element_body: const HomePage(),
                                 element_appbar: appbar_home()));
                           },
-                          icon: Icon(Icons.home, size: isSelected ? 35:30),
+                          icon: Icon(Icons.home, size: isSelected ? 30 : 25),
                           //isSelected: true,
                         ),
                         Visibility(
@@ -113,7 +115,7 @@ class _AcceuilState extends State<Acceuil> {
                           },
                           icon: Icon(
                             Icons.list,
-                            size: isSelected ? 35:25,
+                            size: isSelected ? 30 : 25,
                           ),
                           //isSelected: true,
                         ),
@@ -148,8 +150,8 @@ class _AcceuilState extends State<Acceuil> {
                           },
                           icon: Icon(
                             Icons.settings,
-                            size: isSelected ? 35:25,
-                            ),
+                            size: isSelected ? 30 : 25,
+                          ),
                         ),
                         Visibility(
                             visible: isSelected ? true : false,
@@ -187,14 +189,35 @@ class _AcceuilState extends State<Acceuil> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          //.......scanner QR
+                          //.......scanner QR.....................................................
                           Column(
                             children: [
                               FloatingActionButton(
-                                backgroundColor: const Color(0xFF007549),
-                                onPressed: () {},
-                                child: Image.asset('images/QR_Code.png')
-                              ),
+                                  backgroundColor: const Color(0xFF007549),
+                                  onPressed: () {
+                                    //Get.back();
+                                    // ignore: non_constant_identifier_names
+                                    void QRCodeScan() async {
+                                      String QRCode;
+                                      // ignore: unused_local_variable
+                                      String _BarcodeResult = '';
+                                      try {
+                                        QRCode = await FlutterBarcodeScanner
+                                            .scanBarcode(
+                                                "#ff6666", // Scan line color
+                                                "Cancel", // Cancel button text
+                                                true, // Whether to use the rear camera
+                                                ScanMode.QR);
+                                      } on PlatformException {
+                                        QRCode = 'Echec PlatformException';
+                                      }
+
+                                      setState(() {
+                                        _BarcodeResult = QRCode;
+                                      });
+                                    }
+                                  },
+                                  child: Image.asset('images/QR_Code.png')),
                               const SizedBox(
                                 height: 5,
                               ),
@@ -209,14 +232,14 @@ class _AcceuilState extends State<Acceuil> {
                             ],
                           ),
 
-                          //.......Mes transactions
+                          //.......Mes transactions.........................................................
                           Column(
                             children: [
                               FloatingActionButton(
-                                backgroundColor: const Color(0xFF007549),
-                                onPressed: () {},
-                                child: Image.asset('images/transactions.png')
-                              ),
+                                  backgroundColor: const Color(0xFF007549),
+                                  onPressed: () {},
+                                  child:
+                                      Image.asset('images/transactions.png')),
                               const SizedBox(
                                 height: 5,
                               ),
@@ -235,10 +258,9 @@ class _AcceuilState extends State<Acceuil> {
                           Column(
                             children: [
                               FloatingActionButton(
-                                backgroundColor: const Color(0xFF007549),
-                                onPressed: () {},
-                                child: Image.asset('images/assurrance.png')
-                              ),
+                                  backgroundColor: const Color(0xFF007549),
+                                  onPressed: () {},
+                                  child: Image.asset('images/assurrance.png')),
                               const SizedBox(
                                 height: 5,
                               ),

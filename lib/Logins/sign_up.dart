@@ -57,7 +57,7 @@ class _Sign_upState extends State<Sign_up> {
                       style: TextStyle(
                           fontSize: 27,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xffFB5606)),
+                          color: Color(0xFFc75c0c),),
                     ),
 
                     //Sizedboxe
@@ -70,10 +70,10 @@ class _Sign_upState extends State<Sign_up> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          suffixIconColor: const Color(0xffFB5606),
+                          suffixIconColor: const Color(0xFFc75c0c),
                           errorBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffFB5606))),
-                          errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                              borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                          errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                           labelStyle: Theme.of(context).textTheme.bodyMedium,
                           focusColor: Theme.of(context).primaryColor,
                           border: UnderlineInputBorder(
@@ -107,10 +107,10 @@ class _Sign_upState extends State<Sign_up> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          suffixIconColor: const Color(0xffFB5606),
+                          suffixIconColor: const Color(0xFFc75c0c),
                           errorBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffFB5606))),
-                          errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                              borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                          errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                           labelStyle: Theme.of(context).textTheme.bodyMedium,
                           focusColor: Theme.of(context).primaryColor,
                           border: UnderlineInputBorder(
@@ -145,10 +145,10 @@ class _Sign_upState extends State<Sign_up> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          suffixIconColor: const Color(0xffFB5606),
+                          suffixIconColor: const Color(0xFFc75c0c),
                           errorBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffFB5606))),
-                          errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                              borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                          errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                           labelStyle: Theme.of(context).textTheme.bodyMedium,
                           focusColor: Theme.of(context).primaryColor,
                           border: UnderlineInputBorder(
@@ -182,10 +182,10 @@ class _Sign_upState extends State<Sign_up> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         decoration: InputDecoration(
-                          suffixIconColor: const Color(0xffFB5606),
+                          suffixIconColor: const Color(0xFFc75c0c),
                           errorBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffFB5606))),
-                          errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                              borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                          errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                           labelStyle: Theme.of(context).textTheme.bodyMedium,
                           focusColor: Theme.of(context).primaryColor,
                           border: UnderlineInputBorder(
@@ -226,10 +226,10 @@ class _Sign_upState extends State<Sign_up> {
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: state.obscure,
                         decoration: InputDecoration(
-                          suffixIconColor: const Color(0xffFB5606),
+                          suffixIconColor: const Color(0xFFc75c0c),
                           errorBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffFB5606))),
-                          errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                              borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                          errorStyle: const TextStyle(color:Color(0xFFc75c0c),),
                           labelStyle: Theme.of(context).textTheme.bodyMedium,
                           focusColor: Theme.of(context).primaryColor,
                           border: UnderlineInputBorder(
@@ -278,10 +278,10 @@ class _Sign_upState extends State<Sign_up> {
                         keyboardType: TextInputType.visiblePassword,
                         obscureText: state.obscure,
                         decoration: InputDecoration(
-                          suffixIconColor: const Color(0xffFB5606),
+                          suffixIconColor: const Color(0xFFc75c0c),
                           errorBorder: const OutlineInputBorder(
-                              borderSide: BorderSide(color: Color(0xffFB5606))),
-                          errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                              borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                          errorStyle: const TextStyle(color:Color(0xFFc75c0c),),
                           labelStyle: Theme.of(context).textTheme.bodyMedium,
                           focusColor: Theme.of(context).primaryColor,
                           border: UnderlineInputBorder(
@@ -333,11 +333,11 @@ class _Sign_upState extends State<Sign_up> {
                         width: screen_width * .88,
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
-                            color: Color.fromARGB(255, 1, 126, 59),
+                            color: Color(0xFF007549),
                             borderRadius: BorderRadius.all(Radius.circular(12)),
                             boxShadow: [
                               BoxShadow(
-                                color: Color.fromARGB(255, 1, 126, 59),
+                                color: Color(0xFF007549),
                                 blurRadius: 2,
                                 offset: Offset(0, 4),
                                 spreadRadius: 1,
@@ -370,7 +370,7 @@ class _Sign_upState extends State<Sign_up> {
                               child: const Text(
                                 'Se connecter',
                                 style: TextStyle(
-                                  color: Color(0xffFB5606),
+                                  color: Color(0xFFc75c0c),
                                 ),
                               ),
                             )

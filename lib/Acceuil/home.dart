@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 
@@ -17,12 +18,13 @@ class _HomePageState extends State<HomePage> {
     double w = MediaQuery.of(context).size.width;
     String titre = 'Bienvenu !';
     Color couleur1 = const Color(0xFF007549);
+    Color couleur2 = const Color.fromARGB(255, 4, 209, 144);
     return SingleChildScrollView(
       child: Center(
         child: Column(
           children: [
             Container(
-              height: 150,
+              height: 160,
               width: w,
               decoration: BoxDecoration(
                   color: const Color(0xFF007549),
@@ -37,16 +39,17 @@ class _HomePageState extends State<HomePage> {
                         spreadRadius: 1,
                         offset: const Offset(0, 2))
                   ]),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: Center(
-                  child: Column(
+              child: Center(
+                child: Stack(children: [
+                  Column(
                     children: [
                       const Text(
                         textAlign: TextAlign.center,
                         '+098564669579695',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
                       ),
                       const SizedBox(
                         height: 10,
@@ -54,23 +57,17 @@ class _HomePageState extends State<HomePage> {
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
                               height: 100,
-                              width: 200,
+                              width: 220,
                               child: ListTile(
                                 leading: const CircleAvatar(
                                   backgroundColor:
                                       Color.fromARGB(255, 255, 255, 255),
-                                      backgroundImage: AssetImage('images/avatar.png'),
-                                  // child: Text(
-                                  //   titre[0].toUpperCase(),
-                                  //   style: const TextStyle(
-                                  //       color: Color(0xFF007549),
-                                  //       fontSize: 22,
-                                  //       fontWeight: FontWeight.bold),
-                                  // ),
+                                  backgroundImage:
+                                      AssetImage('images/avatar.png'),
                                 ),
                                 title: Text(
                                   titre,
@@ -83,64 +80,44 @@ class _HomePageState extends State<HomePage> {
                                   'M. Clement Junior',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 11,
+                                    fontSize: 13,
                                     color: Color.fromARGB(255, 255, 255, 255),
                                   ),
                                 ),
                               ),
                             ),
+                            const SizedBox(
+                              width: 1,
+                            ),
                             BlocBuilder<BlocBloc4, Visibility_solde_state>(
                               builder: (context, state) {
                                 return Container(
                                   height: 100,
-                                  width: 250,
+                                  width: 240,
                                   child: ListTile(
-                                      leading: const Icon(
-                                        Icons.folder_copy_outlined,
-                                        size: 45,
-                                        color: Color.fromARGB(255, 255, 255, 255),
+                                    leading: const Icon(
+                                      Icons.folder_copy_outlined,
+                                      size: 45,
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                    ),
+                                    title: const Text(
+                                      'Votre Solde:',
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
                                       ),
-                                      title: const Text(
-                                        'Votre Solde est:',
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color:
-                                              Color.fromARGB(255, 255, 255, 255),
-                                        ),
+                                    ),
+                                    subtitle: Text(
+                                      state.solde,
+                                      style: const TextStyle(
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
                                       ),
-                                      subtitle: Text(
-                                        state.solde,
-                                        style: const TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.bold,
-                                          color:
-                                              Color.fromARGB(255, 255, 255, 255),
-                                        ),
-                                      ),
-                                      trailing: BlocSelector<BlocBloc4,
-                                          Visibility_solde_state, bool>(
-                                        selector: (state) {
-                                          return state.solde == "XXXXXX"
-                                              ? false
-                                              : true;
-                                        },
-                                        builder: (context, isSelect) {
-                                          return IconButton(
-                                            onPressed: () {
-                                              context.read<BlocBloc4>().add(
-                                                  Visibility_solde(
-                                                      solde: state.solde));
-                                            },
-                                            icon: Icon(
-                                              isSelect
-                                                  ? Icons.visibility
-                                                  : Icons.visibility_off,
-                                              color: const Color.fromARGB(
-                                                  255, 255, 255, 255),
-                                            ),
-                                          );
-                                        },
-                                      )),
+                                    ),
+                                  ),
                                 );
                               },
                             ),
@@ -149,7 +126,35 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 340, top: 110),
+                    child: BlocBuilder<BlocBloc4, Visibility_solde_state>(
+                      builder: (context, state) {
+                        return BlocSelector<BlocBloc4, Visibility_solde_state,
+                            bool>(
+                          selector: (state) {
+                            return state.solde == "XXXXXX" ? false : true;
+                          },
+                          builder: (context, isSelect) {
+                            return IconButton(
+                              onPressed: () {
+                                context
+                                    .read<BlocBloc4>()
+                                    .add(Visibility_solde(solde: state.solde));
+                              },
+                              icon: Icon(
+                                isSelect
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  )
+                ]),
               ),
             ),
 
@@ -182,58 +187,73 @@ class _HomePageState extends State<HomePage> {
                 return SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.only(
+                        top: 2, left: 8, right: 8, bottom: 2),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         //Envoyer
-                        GestureDetector(
-                          onTap: () {
-                            context
-                                .read<BlocBloc5>()
-                                .add(Visibility_services(service: envoie()));
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 63,
-                                width: 63,
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: couleur1,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(50)),
-                                  // border: Border.all(
-                                  //   color: const Color(0xFF045B0D),
-                                  //   style: BorderStyle.solid,
-                                  //   width: 2
-                                  // ),
-                                ),
-                                child: Image.asset('images/envoie.png'),
-                              ),
-                              //sizedbox
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              BlocSelector<BlocBloc5, Visibility_services_state,
-                                  bool>(
-                                selector: (state) {
-                                  return state.service is envoie;
-                                },
-                                builder: (context, isSelected) {
-                                  return Visibility(
-                                    visible: isSelected,
-                                    child: const Text(
-                                      textAlign: TextAlign.center,
-                                      'Effectuer\n Envoie',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                        Column(
+                          children: [
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is envoie;
+                              },
+                              builder: (context, state) {
+                                return Bounce(
+                                  onPressed: () {
+                                    context.read<BlocBloc5>().add(
+                                        Visibility_services(
+                                            service: const envoie()));
+                                  },
+                                  duration: const Duration(milliseconds: 500),
+                                  child: Container(
+                                    height: 55,
+                                    width: 55,
+                                    padding: const EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(.15),
+                                          blurRadius: 5,
+                                          spreadRadius: 3,
+                                          //offset: const Offset(0, 3)
+                                        )
+                                      ],
+                                      color: state ? couleur2 : couleur1,
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(50)),
                                     ),
-                                  );
-                                },
-                              )
-                            ],
-                          ),
+                                    child: Image.asset('images/envoie.png'),
+                                  ),
+                                );
+                              },
+                            ),
+                            //sizedbox
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is envoie;
+                              },
+                              builder: (context, isSelected) {
+                                return Visibility(
+                                  visible: isSelected,
+                                  child: Text(
+                                    textAlign: TextAlign.center,
+                                    'Effectuer\n Envoie',
+                                    style: TextStyle(
+                                        color: couleur2,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                );
+                              },
+                            )
+                          ],
                         ),
 
                         //sizedbox
@@ -242,53 +262,67 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         //retrait
-                        GestureDetector(
-                          onTap: () {
-                            context
-                                .read<BlocBloc5>()
-                                .add(Visibility_services(service: retrait()));
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 63,
-                                width: 63,
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: couleur1,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(50)),
-                                  // border: Border.all(
-                                  //   color: const Color(0xFF045B0D),
-                                  //   style: BorderStyle.solid,
-                                  //   width: 2
-                                  // ),
-                                ),
-                                child: Image.asset('images/retrait.png'),
-                              ),
-                              //sizedbox
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              BlocSelector<BlocBloc5, Visibility_services_state,
-                                  bool>(
-                                selector: (state) {
-                                  return state.service is retrait;
-                                },
-                                builder: (context, isSelected) {
-                                  return Visibility(
-                                    visible: isSelected,
-                                    child: const Text(
-                                      textAlign: TextAlign.center,
-                                      'Effectuer\n Retrait',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                        Column(
+                          children: [
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is retrait;
+                              },
+                              builder: (context, state) {
+                                return Bounce(
+                                  onPressed: () {
+                                    context.read<BlocBloc5>().add(
+                                        Visibility_services(
+                                            service: retrait()));
+                                  },
+                                  duration: const Duration(milliseconds: 500),
+                                  child: Container(
+                                    height: 55,
+                                    width: 55,
+                                    padding: const EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(.15),
+                                          blurRadius: 5,
+                                          spreadRadius: 3,
+                                          //offset: const Offset(0, 3)
+                                        )
+                                      ],
+                                      color: state ? couleur2 : couleur1,
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(50)),
                                     ),
-                                  );
-                                },
-                              )
-                            ],
-                          ),
+                                    child: Image.asset('images/retrait.png'),
+                                  ),
+                                );
+                              },
+                            ),
+                            //sizedbox
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is retrait;
+                              },
+                              builder: (context, isSelected) {
+                                return Visibility(
+                                  visible: isSelected,
+                                  child: Text(
+                                    textAlign: TextAlign.center,
+                                    'Effectuer\n Retrait',
+                                    style: TextStyle(
+                                        color: couleur2,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                );
+                              },
+                            )
+                          ],
                         ),
 
                         //sizedbox
@@ -297,107 +331,67 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         //achat unites
-                        GestureDetector(
-                          onTap: () {
-                            context.read<BlocBloc5>().add(
-                                Visibility_services(service: achat_unites()));
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 63,
-                                width: 63,
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: couleur1,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(50)),
-                                  // border: Border.all(
-                                  //   color: const Color(0xFF045B0D),
-                                  //   style: BorderStyle.solid,
-                                  //   width: 2
-                                  // ),
-                                ),
-                                child: Image.asset('images/achat_unites.png'),
-                              ),
-                              //sizedbox
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              BlocSelector<BlocBloc5, Visibility_services_state,
-                                  bool>(
-                                selector: (state) {
-                                  return state.service is achat_unites;
-                                },
-                                builder: (context, isSelected) {
-                                  return Visibility(
-                                    visible: isSelected,
-                                    child: const Text(
-                                      textAlign: TextAlign.center,
-                                      'Achat\n Unités',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                        Column(
+                          children: [
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is achat_unites;
+                              },
+                              builder: (context, state) {
+                                return Bounce(
+                                  duration: const Duration(milliseconds: 500),
+                                  onPressed: () {
+                                    context.read<BlocBloc5>().add(Visibility_services(
+                              service: const achat_unites()));
+                                  },
+                                  child: Container(
+                                    height: 55,
+                                    width: 55,
+                                    padding: const EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(.15),
+                                          blurRadius: 5,
+                                          spreadRadius: 3,
+                                          //offset: const Offset(0, 3)
+                                        )
+                                      ],
+                                      color: state ? couleur2 : couleur1,
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(50)),
                                     ),
-                                  );
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-
-                        //sizedbox
-                        const SizedBox(
-                          width: 35,
-                        ),
-
-                        //effectuer_payement
-                        GestureDetector(
-                          onTap: () {
-                            context.read<BlocBloc5>().add(Visibility_services(
-                                service: const effectuer_payement()));
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 63,
-                                width: 63,
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: couleur1,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(50)),
-                                  // border: Border.all(
-                                  //   color: const Color(0xFF045B0D),
-                                  //   style: BorderStyle.solid,
-                                  //   width: 2
-                                  // ),
-                                ),
-                                child: Image.asset(
-                                    'images/effectuer_payement.png'),
-                              ),
-                              //sizedbox
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              BlocSelector<BlocBloc5, Visibility_services_state,
-                                  bool>(
-                                selector: (state) {
-                                  return state.service is effectuer_payement;
-                                },
-                                builder: (context, isSelected) {
-                                  return Visibility(
-                                    visible: isSelected,
-                                    child: const Text(
-                                      textAlign: TextAlign.center,
-                                      'Effectuer\n Payement',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  );
-                                },
-                              )
-                            ],
-                          ),
+                                    child:
+                                        Image.asset('images/achat_unites.png'),
+                                  ),
+                                );
+                              },
+                            ),
+                            //sizedbox
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is achat_unites;
+                              },
+                              builder: (context, isSelected) {
+                                return Visibility(
+                                  visible: isSelected,
+                                  child: Text(
+                                    textAlign: TextAlign.center,
+                                    'Achat\n Unités',
+                                    style: TextStyle(
+                                        color: couleur2,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                );
+                              },
+                            )
+                          ],
                         ),
 
                         //sizedbox
@@ -406,52 +400,67 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         //payer_facture
-                        GestureDetector(
-                          onTap: () {
-                            context.read<BlocBloc5>().add(
-                                Visibility_services(service: payer_facture()));
-                          },
-                          child: Column(
-                            children: [
-                              Container(
-                                height: 63,
-                                width: 63,
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: couleur1,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(50)),
-                                  // border: Border.all(
-                                  //   color: const Color(0xFF045B0D),
-                                  //   style: BorderStyle.solid,
-                                  //   width: 2
-                                  // ),
-                                ),
-                                child: Image.asset('images/payer_facture.png'),
-                              ),
-                              //sizedbox
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              BlocSelector<BlocBloc5, Visibility_services_state,
-                                  bool>(
-                                selector: (state) {
-                                  return state.service is payer_facture;
-                                },
-                                builder: (context, isSelected) {
-                                  return Visibility(
-                                    visible: isSelected,
-                                    child: const Text(
-                                      textAlign: TextAlign.center,
-                                      'Paiement\n Facture',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
+                        Column(
+                          children: [
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is payer_facture;
+                              },
+                              builder: (context, state) {
+                                return Bounce(
+                                  duration: const Duration(milliseconds: 500),
+                                  onPressed: () {
+                                    context.read<BlocBloc5>().add(
+                              Visibility_services(service: const payer_facture()));
+                                  },
+                                  child: Container(
+                                    height: 55,
+                                    width: 55,
+                                    padding: const EdgeInsets.all(12),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(.15),
+                                          blurRadius: 5,
+                                          spreadRadius: 3,
+                                          //offset: const Offset(0, 3)
+                                        )
+                                      ],
+                                      color: state ? couleur2 : couleur1,
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(50)),
                                     ),
-                                  );
-                                },
-                              )
-                            ],
-                          ),
+                                    child:
+                                        Image.asset('images/payer_facture.png'),
+                                  ),
+                                );
+                              },
+                            ),
+                            //sizedbox
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            BlocSelector<BlocBloc5, Visibility_services_state,
+                                bool>(
+                              selector: (state) {
+                                return state.service is payer_facture;
+                              },
+                              builder: (context, isSelected) {
+                                return Visibility(
+                                  visible: isSelected,
+                                  child: Text(
+                                    textAlign: TextAlign.center,
+                                    'Paiement\n Facture',
+                                    style: TextStyle(
+                                        color: couleur2,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                );
+                              },
+                            )
+                          ],
                         ),
                       ],
                     ),
@@ -462,14 +471,14 @@ class _HomePageState extends State<HomePage> {
 
             //sizedbox
             const SizedBox(
-              height: 5,
+              height: 7,
             ),
 
             //......................................Espace d'afficharge
             BlocBuilder<BlocBloc5, Visibility_services_state>(
               builder: (context, state) {
                 return Container(
-                  height: h * .33,
+                  height: h * .37,
                   width: w,
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -490,7 +499,7 @@ class _HomePageState extends State<HomePage> {
                   //   border: Border.all(
                   //     color: const Color(0xFF045B0D).withOpacity(.3),
                   //     width: .5,
-                
+
                   //   )
                   // ),
                   child: state.service,

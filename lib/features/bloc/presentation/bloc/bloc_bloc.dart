@@ -163,3 +163,16 @@ class BlocBloc11 extends Bloc<ressources_Paiement_factures, ressources_Paiement_
     });
   }
 }
+
+//.......................stockage de la confirmation de retrait....................................
+class BlocBloc12 extends Bloc<retrait_confirm, retrait_confirm_state> {
+  BlocBloc12()
+      : super(
+          retrait_confirm_state(val: false),
+        ) {
+    on<retrait_confirm>((event, emit) {
+
+      emit(retrait_confirm_state(val: event.val));
+    });
+  }
+}

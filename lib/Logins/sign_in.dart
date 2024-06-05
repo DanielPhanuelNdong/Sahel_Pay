@@ -45,7 +45,7 @@ class _Sign_inState extends State<Sign_in> {
                 const Text(
                   'Bienvenue',
                   style: TextStyle(
-                    color: Color.fromARGB(255, 1, 126, 59),
+                    color: Color(0xFF007549),
                     fontSize: 27,
                     fontWeight: FontWeight.bold,
                     //color: Color.fromARGB(255, 0, 0, 0)
@@ -62,7 +62,7 @@ class _Sign_inState extends State<Sign_in> {
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xffFB5606)),
+                      color:Color(0xFFc75c0c),),
                 ),
           
                 //Sizedboxe
@@ -75,12 +75,12 @@ class _Sign_inState extends State<Sign_in> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      suffixIconColor: const Color(0xffFB5606),
+                      suffixIconColor: const Color(0xFFc75c0c),
                       errorBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffFB5606))),
-                      errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                          borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                      errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                       labelStyle: Theme.of(context).textTheme.bodyMedium,
-                      focusColor: const Color.fromARGB(255, 1, 126, 59),
+                      focusColor: const Color(0xFF007549),
                       border: UnderlineInputBorder(
                           borderSide: BorderSide(
                         color: Theme.of(context).primaryColor,
@@ -118,10 +118,10 @@ class _Sign_inState extends State<Sign_in> {
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: state.obscure,
                     decoration: InputDecoration(
-                      suffixIconColor: const Color(0xffFB5606),
+                      suffixIconColor: const Color(0xFFc75c0c),
                       errorBorder: const OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xffFB5606))),
-                      errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                          borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                      errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                       labelStyle: Theme.of(context).textTheme.bodyMedium,
                       focusColor: Theme.of(context).primaryColor,
                       border: UnderlineInputBorder(
@@ -175,7 +175,7 @@ class _Sign_inState extends State<Sign_in> {
                           style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xffFB5606)),
+                              color: Color(0xFFc75c0c),),
                         )),
                     Container(
                         width: 215,
@@ -186,7 +186,7 @@ class _Sign_inState extends State<Sign_in> {
                             'Se sourvenir de moi',
                             style: TextStyle(fontSize: 12),
                           ),
-                          activeColor: const Color(0xffFB5606),
+                          activeColor: const Color(0xFFc75c0c),
                           value: state.value,
                           onChanged: (value) {
                             context.read<BlocBloc2>().add(se_souvenir(value: state.value));
@@ -215,11 +215,11 @@ class _Sign_inState extends State<Sign_in> {
                     width: screen_width * .88,
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
-                        color: Color.fromARGB(255, 1, 126, 59),
+                        color: Color(0xFF007549),
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                         boxShadow: [
                           BoxShadow(
-                            color: Color.fromARGB(255, 1, 126, 59),
+                            color: Color(0xFF007549),
                             blurRadius: 2,
                             offset: Offset(0, 4),
                             spreadRadius: 1,
@@ -263,7 +263,7 @@ class _Sign_inState extends State<Sign_in> {
                           'S\'inscrire',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Color(0xffFB5606)),
+                              color:Color(0xFFc75c0c),),
                         ),
                       ),
                     ],

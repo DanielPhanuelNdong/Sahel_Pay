@@ -33,7 +33,7 @@ class _Forget_passeState extends State<Forget_passe> {
                   const Text(
                     'Mot de passe oublié ',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 1, 126, 59),
+                      color: Color(0xFF007549),
                       fontSize: 25,
                       fontWeight: FontWeight.bold,
                       //color: Color.fromARGB(255, 0, 0, 0)
@@ -48,7 +48,7 @@ class _Forget_passeState extends State<Forget_passe> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xffFB5606),
+                      color: Color(0xFFc75c0c),
                     ),
                   ),
               
@@ -62,10 +62,10 @@ class _Forget_passeState extends State<Forget_passe> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       decoration: InputDecoration(
-                            suffixIconColor: const Color(0xffFB5606),
+                            suffixIconColor: const Color(0xFFc75c0c),
                             errorBorder: const OutlineInputBorder(
-                                borderSide: BorderSide(color: Color(0xffFB5606))),
-                            errorStyle: const TextStyle(color: Color(0xffFB5606)),
+                                borderSide: BorderSide(color: Color(0xFFc75c0c),)),
+                            errorStyle: const TextStyle(color: Color(0xFFc75c0c),),
                         labelStyle: Theme.of(context).textTheme.bodyMedium,
                               focusColor: Theme.of(context).primaryColor,
                               border: UnderlineInputBorder(
@@ -110,12 +110,12 @@ class _Forget_passeState extends State<Forget_passe> {
                     width: screen_width * .88,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 1, 126, 59),
+                        color: const Color(0xFF007549),
                         borderRadius:
                             const BorderRadius.all(Radius.circular(12)),
                         boxShadow: [
                           BoxShadow(
-                            color: const Color.fromARGB(255, 1, 126, 59).withOpacity(.2),
+                            color: const Color(0xFF007549).withOpacity(.2),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                             spreadRadius: 4,
