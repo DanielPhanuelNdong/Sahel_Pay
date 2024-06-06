@@ -450,67 +450,47 @@ class _achat_unitesState extends State<achat_unites> {
           children: [
             //MTN........................................
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.only(top: 35, left: 35, right: 35),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
                   achat_unit();
                 },
-                child: FittedBox(
-                  child: Card(
-                    elevation: 2,
-                    child: Image.asset('images/mtn.png'),
-                  ),
-                ),
+                child: Image.asset('images/mtn.png'),
               ),
             ),
 
             //Orange................................
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.only(top: 35, left: 35, right: 35),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
                   achat_unit();
                 },
-                child: FittedBox(
-                  child: Card(
-                    elevation: 2,
-                    child: Image.asset('images/orange.png'),
-                  ),
-                ),
+                child: Image.asset('images/orange.png'),
               ),
             ),
             //Blue................................................
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.only(bottom: 35, left: 35, right: 35),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
                   achat_unit();
                 },
-                child: FittedBox(
-                  child: Card(
-                    elevation: 2,
-                    child: Image.asset('images/blue.png'),
-                  ),
-                ),
+                child: Image.asset('images/blue.png'),
               ),
             ),
             //Nexttel..............................
             Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.only(bottom: 35, left: 35, right: 35),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
                   achat_unit();
                 },
-                child: FittedBox(
-                  child: Card(
-                    elevation: 2,
-                    child: Image.asset('images/nexttel.png'),
-                  ),
-                ),
+                child: Image.asset('images/nexttel.png'),
               ),
             ),
           ],

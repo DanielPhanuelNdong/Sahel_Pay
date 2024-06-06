@@ -3,7 +3,7 @@ import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
 
 //ignore: non_constant_identifier_names
-Future canal(context) async {
+Future operater_orange(context) async {
   //boite de dialogue pour entrer le numero et le montant............................................
   return await Get.bottomSheet(SingleChildScrollView(
     child: ClipRRect(
@@ -24,20 +24,25 @@ Future canal(context) async {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 1),
+                padding: const EdgeInsets.only(top: 40),
                 child: Column(
                   children: [
                     //logo de canal+..........
                     ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                            height: 130, width: 130, 'images/canal+2.png')),
+                            height: 130, width: 130, 'images/orange2.png')),
+
+                    //sizedbox
+                    const SizedBox(
+                      height: 20,
+                    ),
 
                     //Bienvenu sur le service Canal+.......
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        'Bienvenu sur canal+ ',
+                        'Bienvenu sur Orange',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xFFc75c0c),
@@ -51,12 +56,12 @@ Future canal(context) async {
 
               //sizedbox
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
 
               Column(
                 children: [
-                  //Reconduire mon abonement actuel.......................
+                  //FTTH/FTTO.......................
                   Bounce(
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
@@ -71,14 +76,14 @@ Future canal(context) async {
                               const BorderRadius.all(Radius.circular(30))),
                       child: const Text(
                         textAlign: TextAlign.center,
-                        'Reconduire mon abonement actuel',
+                        'FTTH/FTTO',
                         style: TextStyle(
                             color: Color.fromARGB(255, 249, 210, 179),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  //Changer d\'offre.......................
+                  //Modem.......................
                   Bounce(
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
@@ -93,51 +98,7 @@ Future canal(context) async {
                               const BorderRadius.all(Radius.circular(30))),
                       child: const Text(
                         textAlign: TextAlign.center,
-                        'Changer d\'offre',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 249, 210, 179),
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  //Changer d\'offre.......................
-                  Bounce(
-                    duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
-                    child: Container(
-                      height: 40,
-                      width: 310,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: const Color(0xFF007549),
-                          border: Border.all(color: Colors.white, width: 3),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(30))),
-                      child: const Text(
-                        textAlign: TextAlign.center,
-                        'Gérer ma liste de numéro de réabonnement',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 249, 210, 179),
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                  //Changer d\'offre.......................
-                  Bounce(
-                    duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
-                    child: Container(
-                      height: 40,
-                      width: 310,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: const Color(0xFF007549),
-                          border: Border.all(color: Colors.white, width: 3),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(30))),
-                      child: const Text(
-                        textAlign: TextAlign.center,
-                        'Consulter / Régulariser mon solde impayé',
+                        'Modem',
                         style: TextStyle(
                             color: Color.fromARGB(255, 249, 210, 179),
                             fontWeight: FontWeight.bold),

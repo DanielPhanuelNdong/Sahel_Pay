@@ -3,8 +3,12 @@ import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
 
 import 'ressources/canal+.dart';
-import 'ressources/eau.dart';
-import 'ressources/eneo.dart';
+import 'ressources/eau/eau.dart';
+import 'ressources/operateur_camtels.dart';
+import 'ressources/operateur_mtn.dart';
+import 'ressources/operateurs_orange.dart';
+import 'ressources/startimes.dart';
+import 'ressources/électricité/eneo.dart';
 
 class payer_facture extends StatefulWidget {
   const payer_facture({super.key});
@@ -74,7 +78,16 @@ class _payer_factureState extends State<payer_facture> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
                             child: Image.asset(
                               'images/camwater.png',
                               fit: BoxFit.cover,
@@ -116,7 +129,16 @@ class _payer_factureState extends State<payer_facture> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
                             child: Image.asset(
                               'images/eneo.png',
                               fit: BoxFit.cover,
@@ -159,7 +181,16 @@ class _payer_factureState extends State<payer_facture> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
                             child: Image.asset(
                               'images/canal+.png',
                               fit: BoxFit.cover,
@@ -173,13 +204,22 @@ class _payer_factureState extends State<payer_facture> {
                       Bounce(
                         duration: const Duration(milliseconds: 500),
                         onPressed: () {
-                          factures();
+                          startimes(context);
                         },
                         child: Container(
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
                             child: Image.asset(
                               'images/startimes.png',
                               fit: BoxFit.cover,
@@ -193,14 +233,15 @@ class _payer_factureState extends State<payer_facture> {
               //sizedbox
               const SizedBox(height: 10,),
               const Padding(
-                padding: EdgeInsets.only(right: 310),
+                padding: EdgeInsets.only(right: 270),
                 child: Text(
-                  'Camtel',
+                  'Opérateurs',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
                 ),
               ),
               //sizedbox
               const SizedBox(height: 10,),
+              
               Container(
                 height: 100,
                 width: screen_width,
@@ -212,16 +253,26 @@ class _payer_factureState extends State<payer_facture> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      //Camtel........................
                       Bounce(
                         duration: const Duration(milliseconds: 500),
                         onPressed: () {
-                          factures();
+                          operater_camtel(context);
                         },
                         child: Container(
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
                             child: Image.asset(
                               height: 60,
                               width: 60,
@@ -229,10 +280,73 @@ class _payer_factureState extends State<payer_facture> {
                               fit: BoxFit.cover,
                             )),
                       ),
+
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      //Orange........................
+                      Bounce(
+                        duration: const Duration(milliseconds: 500),
+                        onPressed: () {
+                          operater_orange(context);
+                        },
+                        child: Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
+                            child: Image.asset(
+                              height: 60,
+                              width: 60,
+                              'images/orange.png',
+                              fit: BoxFit.cover,
+                            )),
+                      ),
+
+                      const SizedBox(
+                        width: 50,
+                      ),
+                      //MTN........................
+                      Bounce(
+                        duration: const Duration(milliseconds: 500),
+                        onPressed: () {
+                          operater_mtn(context);
+                        },
+                        child: Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
+                            child: Image.asset(
+                              height: 60,
+                              width: 60,
+                              'images/mtn.png',
+                              fit: BoxFit.cover,
+                            )),
+                      ),
                     ],
                   ),
                 ),
               ),
+              
               //Sahel pay......................................................
               //sizedbox
               const SizedBox(height: 10,),
@@ -259,13 +373,21 @@ class _payer_factureState extends State<payer_facture> {
                       Bounce(
                         duration: const Duration(milliseconds: 500),
                         onPressed: () {
-                          factures();
                         },
                         child: Container(
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ],
+                            ),
                             child: Image.asset(
                               height: 60,
                               width: 60,
@@ -302,7 +424,6 @@ class _payer_factureState extends State<payer_facture> {
                       Bounce(
                         duration: const Duration(milliseconds: 500),
                         onPressed: () {
-                          factures();
                         },
                         child: Container(
                             height: 60,
@@ -324,13 +445,21 @@ class _payer_factureState extends State<payer_facture> {
                       Bounce(
                         duration: const Duration(milliseconds: 500),
                         onPressed: () {
-                          factures();
                         },
                         child: Container(
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(50),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(.15),
+                                    blurRadius: 3,
+                                    spreadRadius: 2,
+                                    //offset: const Offset(0,2),
+                                  )
+                                ]
+                                ),
                             child: Image.asset(
                               height: 60,
                               width: 60,

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
 
+import 'Paiement_factures/abonnement_enregistré.dart';
+import 'Paiement_factures/référence_abonnement.dart';
 //ignore: non_constant_identifier_names
-Future canal(context) async {
+Future Paiement_Prepaye(context) async {
   //boite de dialogue pour entrer le numero et le montant............................................
   return await Get.bottomSheet(SingleChildScrollView(
     child: ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(40.0)),
       child: Container(
-        height: 370,
+        height: 400,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: const Color(0xFFf7efe4).withOpacity(.5),
@@ -23,21 +25,25 @@ Future canal(context) async {
           color: const Color(0xFFf7efe4).withOpacity(.5),
           child: Column(
             children: [
+              //sizedbox
+              const SizedBox(
+                height: 30,
+              ),
+
               Padding(
                 padding: const EdgeInsets.only(top: 1),
                 child: Column(
                   children: [
-                    //logo de canal+..........
+                    //logo de camwater..........
                     ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                            height: 130, width: 130, 'images/canal+2.png')),
-
-                    //Bienvenu sur le service Canal+.......
+                            height: 130, width: 130, 'images/camwater2.png')),
+                    //Bienvenu sur le service Camwater.......
                     const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
-                        'Bienvenu sur canal+ ',
+                        'Service de Paiement ppar anticipation',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             color: Color(0xFFc75c0c),
@@ -51,15 +57,17 @@ Future canal(context) async {
 
               //sizedbox
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
 
               Column(
                 children: [
-                  //Reconduire mon abonement actuel.......................
                   Bounce(
                     duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.back();
+                      abonnement_enregistre(context);
+                    },
                     child: Container(
                       height: 40,
                       width: 310,
@@ -70,18 +78,19 @@ Future canal(context) async {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(30))),
                       child: const Text(
-                        textAlign: TextAlign.center,
-                        'Reconduire mon abonement actuel',
+                        'Payer une référence enregistrée',
                         style: TextStyle(
                             color: Color.fromARGB(255, 249, 210, 179),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  //Changer d\'offre.......................
                   Bounce(
                     duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.back();
+                      reference_abonnement(context);
+                    },
                     child: Container(
                       height: 40,
                       width: 310,
@@ -92,18 +101,19 @@ Future canal(context) async {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(30))),
                       child: const Text(
-                        textAlign: TextAlign.center,
-                        'Changer d\'offre',
+                        'Payer une référence abonnement',
                         style: TextStyle(
                             color: Color.fromARGB(255, 249, 210, 179),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  //Changer d\'offre.......................
+
+                  
                   Bounce(
                     duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
+                    onPressed: () {
+                    },
                     child: Container(
                       height: 40,
                       width: 310,
@@ -114,36 +124,14 @@ Future canal(context) async {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(30))),
                       child: const Text(
-                        textAlign: TextAlign.center,
-                        'Gérer ma liste de numéro de réabonnement',
+                        'Consulter son dernier Token',
                         style: TextStyle(
                             color: Color.fromARGB(255, 249, 210, 179),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
-                  //Changer d\'offre.......................
-                  Bounce(
-                    duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
-                    child: Container(
-                      height: 40,
-                      width: 310,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                          color: const Color(0xFF007549),
-                          border: Border.all(color: Colors.white, width: 3),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(30))),
-                      child: const Text(
-                        textAlign: TextAlign.center,
-                        'Consulter / Régulariser mon solde impayé',
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 249, 210, 179),
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
+                
                 ],
               )
             ],

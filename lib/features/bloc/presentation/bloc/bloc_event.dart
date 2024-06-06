@@ -173,3 +173,17 @@ bool val = false;
   ];
 
 }
+
+//.......................maintenir elements...................................
+class maintenir extends BlocEvent {
+  var valu = true;
+  maintenir({
+    required this.valu,
+  });
+  
+  @override
+  List<Object> get props => [
+    valu
+  ];
+
+}

@@ -195,7 +195,9 @@ class _AcceuilState extends State<Acceuil> {
                               FloatingActionButton(
                                   backgroundColor: const Color(0xFF007549),
                                   onPressed: () {
-                                    //Get.back();
+                                    Get.back();
+                                    Paiement_marchand(context);
+                                    
                                     // ignore: non_constant_identifier_names
                                     void QRCodeScan() async {
                                       String QRCode;
@@ -212,17 +214,17 @@ class _AcceuilState extends State<Acceuil> {
                                         QRCode = 'Echec PlatformException';
                                       }
 
-                                      setState(() {
-                                        _BarcodeResult = QRCode;
-                                      });
+                                      // setState(() {
+                                      //   _BarcodeResult = QRCode;
+                                      // });
                                     }
                                   },
-                                  child: Image.asset('images/QR_Code.png')),
+                                  child: Image.asset('images/Paie_marchand.png')),
                               const SizedBox(
                                 height: 5,
                               ),
                               const Text(
-                                'Scanner QR',
+                                'Payement \nMarchant',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: Colors.white,
@@ -297,11 +299,21 @@ class _AcceuilState extends State<Acceuil> {
               ));
 
           //..............temps mis par le bottomsheet
-          Future.delayed(const Duration(seconds: 5), () {
+          font(var val){
+            
+            if(val == true){
+              if(mounted){
+            Future.delayed(const Duration(seconds: 5), () {
             if (Get.isBottomSheetOpen ?? false) {
               Get.back();
             }
-          });
+          }
+          );
+          }
+            }
+          }
+
+          font(true);
         },
         child: const Icon(
           Icons.window,
