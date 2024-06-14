@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sahel_pay/Acceuil/home.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 
 class Detail_retrait extends StatefulWidget {
   const Detail_retrait({super.key});

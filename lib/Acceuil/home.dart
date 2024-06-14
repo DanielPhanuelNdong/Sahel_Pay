@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -493,15 +495,6 @@ class _HomePageState extends State<HomePage> {
                             spreadRadius: 1,
                             offset: const Offset(2, 0))
                       ]),
-                  // BoxDecoration(
-                  //   color: const Color.fromARGB(255, 255, 255, 255),
-                  //   //borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  //   border: Border.all(
-                  //     color: const Color(0xFF045B0D).withOpacity(.3),
-                  //     width: .5,
-
-                  //   )
-                  // ),
                   child: state.service,
                 );
               },

@@ -1,6 +1,8 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
-part of 'bloc_bloc.dart';
+
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 abstract class BlocState extends Equatable {
   const BlocState();  
@@ -174,9 +176,9 @@ bool val = false;
   ];
 }
 
-//.......................maintenir elements...................................
-class maintenir_state extends BlocEvent {
-  var valu = true;
+//.//.......................maintenir elements...................................
+class maintenir_state extends BlocState {
+  var valu;
   maintenir_state({
     required this.valu,
   });
@@ -185,4 +187,93 @@ class maintenir_state extends BlocEvent {
   List<Object> get props => [
     valu
   ];
+}
+
+//.......................Choix d'assurance...................................
+class choix_assurance_state extends BlocState {
+  String assurance ;
+  choix_assurance_state({
+    required this.assurance,
+  });
+  
+  @override
+  List<Object> get props => [
+    assurance
+  ];
+
+  
+}
+
+//.......................Selections des debits..................................
+class debits_assurance_state extends BlocState {
+  String debit ;
+  debits_assurance_state({
+    required this.debit,
+  });
+  
+  @override
+  List<Object> get props => [
+    debit
+  ];
+
+}
+
+//.......................Selection Autodébit.................................
+class debits_assurance1_state extends BlocState {
+  String debit1 ;
+  debits_assurance1_state({
+    required this.debit1,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit1
+  ];
+
+}
+
+//.......................Selection Monthlycover.................................
+class debits_assurance2_state extends BlocState {
+  String debit2 ;
+  debits_assurance2_state({
+    required this.debit2,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit2
+  ];
+
+}
+
+//.......................Selection Prepaidcover.................................
+class debits_assurance3_state extends BlocState {
+  String debit3 ;
+  debits_assurance3_state({
+    required this.debit3,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit3
+  ];
+
+}
+
+//.......................visibilité de Myhealt Payant.................................
+class Myhealt_Payant_state extends BlocState {
+  bool visi ;
+  Myhealt_Payant_state({
+    required this.visi,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    visi
+  ];
+
 }

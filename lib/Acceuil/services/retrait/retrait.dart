@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:sahel_pay/Acceuil/home.dart';
 import 'package:sahel_pay/Acceuil/services/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
 class retrait extends StatefulWidget {
   const retrait({super.key});
 
@@ -328,7 +330,7 @@ class _retraitState extends State<retrait> {
                                   key: formKey2,
                                   child: //Entrer le code PIN....................................
                                       Container(
-                                    height: 220,
+                                    height: 250,
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
                                         color: Colors.white.withOpacity(.4),

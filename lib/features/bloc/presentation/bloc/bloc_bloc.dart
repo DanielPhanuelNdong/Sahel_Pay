@@ -1,12 +1,10 @@
-
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:sahel_pay/Acceuil/home.dart';
-import 'package:sahel_pay/Acceuil/services/transactions.dart';
+import 'package:sahel_pay/Acceuil/services/Transactions/transaction.dart';
 
-part 'bloc_event.dart';
-part 'bloc_state.dart';
+import 'bloc_event.dart';
+import 'bloc_state.dart';
 
 //.................visibilité du mot de passe.............................
 //bloc1 pour la visibilité du mot de passe
@@ -58,7 +56,6 @@ class BlocBloc3 extends Bloc<Barre_navigation, Barre_navigation_satate> {
   }
 }
 
-
 //.................visibilité du solde.............................
 //bloc1 pour la visibilité du solde
 class BlocBloc4 extends Bloc<Visibility_solde, Visibility_solde_state> {
@@ -69,9 +66,9 @@ class BlocBloc4 extends Bloc<Visibility_solde, Visibility_solde_state> {
     on<Visibility_solde>((event, emit) {
       // ignore: non_constant_identifier_names
       var MonSolde = '1000000 XAF';
-      if(event.solde == "XXXXXX"){
+      if (event.solde == "XXXXXX") {
         event.solde = MonSolde;
-      }else{
+      } else {
         event.solde = "XXXXXX";
       }
 
@@ -79,7 +76,6 @@ class BlocBloc4 extends Bloc<Visibility_solde, Visibility_solde_state> {
     });
   }
 }
-
 
 //................visibilite des sevices..............................
 //bloc1 pour la visibilite des sevices
@@ -98,7 +94,7 @@ class BlocBloc5 extends Bloc<Visibility_services, Visibility_services_state> {
 class BlocBloc6 extends Bloc<Modes_envoie, Modes_envoie_state> {
   BlocBloc6()
       : super(
-          Modes_envoie_state(mode: 'Mobile Money'),
+          Modes_envoie_state(mode: 'Sahel Money'),
         ) {
     on<Modes_envoie>((event, emit) {
       emit(Modes_envoie_state(mode: event.mode));
@@ -153,7 +149,8 @@ class BlocBloc10 extends Bloc<Paiement_factures, Paiement_factures_State> {
   }
 }
 
-class BlocBloc11 extends Bloc<ressources_Paiement_factures, ressources_Paiement_factures_State> {
+class BlocBloc11 extends Bloc<ressources_Paiement_factures,
+    ressources_Paiement_factures_State> {
   BlocBloc11()
       : super(
           ressources_Paiement_factures_State(ressources: 'Eau'),
@@ -171,8 +168,94 @@ class BlocBloc12 extends Bloc<retrait_confirm, retrait_confirm_state> {
           retrait_confirm_state(val: false),
         ) {
     on<retrait_confirm>((event, emit) {
-
       emit(retrait_confirm_state(val: event.val));
+    });
+  }
+}
+
+//.//.......................maintenir elements...................................
+class BlocBloc13 extends Bloc<maintenir, maintenir_state> {
+  BlocBloc13()
+      : super(
+          maintenir_state(valu: true),
+        ) {
+    on<maintenir>((event, emit) {
+      emit(maintenir_state(valu: event.valu));
+    });
+  }
+}
+
+//.......................Choix d'assurance...................................
+class BlocBloc14 extends Bloc<choix_assurance, choix_assurance_state> {
+  BlocBloc14()
+      : super(
+          choix_assurance_state(assurance: ''),
+        ) {
+    on<choix_assurance>((event, emit) {
+      
+
+      emit(choix_assurance_state(assurance: event.assurance));
+    });
+  }
+}
+
+
+//.......................Selections des debits..................................
+class BlocBloc16 extends Bloc<debits_assurance, debits_assurance_state> {
+  BlocBloc16()
+      : super(
+          debits_assurance_state(debit: 'Autodebit'),
+        ) {
+    on<debits_assurance>((event, emit) {
+      emit(debits_assurance_state(debit: event.debit));
+    });
+  }
+}
+
+//.......................Selection Autodébit.................................
+class BlocBloc17 extends Bloc<debits_assurance1, debits_assurance1_state> {
+  BlocBloc17()
+      : super(
+          debits_assurance1_state(debit1: '50'),
+        ) {
+    on<debits_assurance1>((event, emit) {
+      emit(debits_assurance1_state(debit1: event.debit1));
+    });
+  }
+}
+
+//.......................Selection Monthlycover.................................
+class BlocBloc18 extends Bloc<debits_assurance2, debits_assurance2_state> {
+  BlocBloc18()
+      : super(
+          debits_assurance2_state(debit2: '1 000'),
+        ) {
+    on<debits_assurance2>((event, emit) {
+      emit(debits_assurance2_state(debit2: event.debit2));
+    });
+  }
+}
+
+//.......................Selection Prepaidcover.................................
+class BlocBloc19 extends Bloc<debits_assurance3, debits_assurance3_state> {
+  BlocBloc19()
+      : super(
+          debits_assurance3_state(debit3: '8 000'),
+        ) {
+    on<debits_assurance3>((event, emit) {
+      emit(debits_assurance3_state(debit3: event.debit3));
+    });
+  }
+}
+
+//.......................visibilité de Myhealt Payant.................................
+class BlocBloc20 extends Bloc<Myhealt_Payant, Myhealt_Payant_state> {
+  BlocBloc20()
+      : super(
+          Myhealt_Payant_state(visi: false),
+        ) {
+    on<Myhealt_Payant>((event, emit) {
+      emit(Myhealt_Payant_state(visi: event.visi));
     });
   }
 }

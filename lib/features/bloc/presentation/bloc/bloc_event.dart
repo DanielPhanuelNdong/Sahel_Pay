@@ -1,6 +1,8 @@
 // ignore_for_file: must_be_immutable, camel_case_types
 
-part of 'bloc_bloc.dart';
+
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 abstract class BlocEvent extends Equatable {
   const BlocEvent();
@@ -176,7 +178,7 @@ bool val = false;
 
 //.......................maintenir elements...................................
 class maintenir extends BlocEvent {
-  var valu = true;
+  var valu ;
   maintenir({
     required this.valu,
   });
@@ -184,6 +186,96 @@ class maintenir extends BlocEvent {
   @override
   List<Object> get props => [
     valu
+  ];
+
+}
+
+//.......................Choix d'assurance...................................
+class choix_assurance extends BlocEvent {
+  String assurance ;
+  choix_assurance({
+    required this.assurance,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    assurance
+  ];
+
+}
+
+//.......................Selections des debits..................................
+class debits_assurance extends BlocEvent {
+  String debit ;
+  debits_assurance({
+    required this.debit,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit
+  ];
+
+}
+
+//.......................Selection Autodébit.................................
+class debits_assurance1 extends BlocEvent {
+  String debit1 ;
+  debits_assurance1({
+    required this.debit1,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit1
+  ];
+
+}
+
+//.......................Selection Monthlycover.................................
+class debits_assurance2 extends BlocEvent {
+  String debit2 ;
+  debits_assurance2({
+    required this.debit2,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit2
+  ];
+
+}
+
+//.......................Selection Prepaidcover.................................
+class debits_assurance3 extends BlocEvent {
+  String debit3 ;
+  debits_assurance3({
+    required this.debit3,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    debit3
+  ];
+
+}
+
+//.......................visibilité de Myhealt Payant.................................
+class Myhealt_Payant extends BlocEvent {
+  bool visi ;
+  Myhealt_Payant({
+    required this.visi,
+  });
+  
+  
+  @override
+  List<Object> get props => [
+    visi
   ];
 
 }

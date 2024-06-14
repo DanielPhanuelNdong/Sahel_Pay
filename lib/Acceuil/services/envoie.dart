@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
 
 import '../../features/bloc/presentation/bloc/bloc_bloc.dart';
+import 'banques/pays.dart';
 
 class envoie extends StatefulWidget {
   const envoie({super.key});
@@ -19,8 +22,8 @@ class _envoieState extends State<envoie> {
   final formKey = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
   final List<String> mode_transfert = [
-    'Mobile Money',
     'Sahel Money',
+    'Mobile Money',
     'Banques'
   ];
 
@@ -55,126 +58,133 @@ class _envoieState extends State<envoie> {
         //modes utilisés
         BlocBuilder<BlocBloc6, Modes_envoie_state>(
           builder: (context, state) {
-            return Stack(
+            return Column(
               children: [
-                InkWell(
-                  onTap: () {},
+                Stack(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 50,
+                        width: 170,
+                        child: ListTile(
+                            leading: Radio(
+                              focusNode: FocusNode(),
+                              value: mode_transfert[0],
+                              groupValue: state.mode == mode_transfert[0]
+                                  ? mode_transfert[0]
+                                  : '',
+                              onChanged: (value) {
+                                context
+                                    .read<BlocBloc6>()
+                                    .add(Modes_envoie(mode: mode_transfert[0]));
+                              },
+                            ),
+                            title: Text(
+                              mode_transfert[0],
+                              style: const TextStyle(
+                                  fontSize: 13, fontWeight: FontWeight.bold),
+                            )),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 120),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 50,
+                          width: 170,
+                          child: ListTile(
+                              leading: Radio(
+                                value: mode_transfert[1],
+                                groupValue: state.mode == mode_transfert[1]
+                                    ? mode_transfert[1]
+                                    : '',
+                                onChanged: (value) {
+                                  context.read<BlocBloc6>().add(
+                                      Modes_envoie(mode: mode_transfert[1]));
+                                },
+                              ),
+                              title: Text(
+                                mode_transfert[1],
+                                style: const TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 240),
+                      child: InkWell(
+                        onTap: () {},
+                        child: Container(
+                          height: 50,
+                          width: 170,
+                          child: ListTile(
+                              leading: Radio(
+                                value: mode_transfert[2],
+                                groupValue: state.mode == mode_transfert[2]
+                                    ? mode_transfert[2]
+                                    : '',
+                                onChanged: (value) {
+                                  context.read<BlocBloc6>().add(
+                                      Modes_envoie(mode: mode_transfert[2]));
+                                },
+                              ),
+                              title: Text(
+                                mode_transfert[2],
+                                style: const TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold),
+                              )),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(
+                  height: 60,
+                ),
+
+                //bouton d'envoie.....................................
+                GestureDetector(
+                  onTap: () {
+                    //boite de dialogue pour entrer le numero et le montant............................................
+                    if (state.mode == mode_transfert[2]) {
+                      context.read<BlocBloc5>().add(
+                          Visibility_services(service: const Choix_pays()));
+                    } else {
+                      envoi();
+                    }
+                  },
                   child: Container(
                     height: 50,
-                    width: 170,
-                    child: ListTile(
-                        leading: Radio(
-                          focusNode: FocusNode(),
-                          value: mode_transfert[0],
-                          groupValue: state.mode == mode_transfert[0]
-                              ? mode_transfert[0]
-                              : '',
-                          onChanged: (value) {
-                            context
-                                .read<BlocBloc6>()
-                                .add(Modes_envoie(mode: mode_transfert[0]));
-                          },
-                        ),
-                        title: Text(
-                          mode_transfert[0],
-                          style: const TextStyle(
-                              fontSize: 13, fontWeight: FontWeight.bold),
-                        )),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 120),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 170,
-                      child: ListTile(
-                          leading: Radio(
-                            value: mode_transfert[1],
-                            groupValue: state.mode == mode_transfert[1]
-                                ? mode_transfert[1]
-                                : '',
-                            onChanged: (value) {
-                              context
-                                  .read<BlocBloc6>()
-                                  .add(Modes_envoie(mode: mode_transfert[1]));
-                            },
-                          ),
-                          title: Text(
-                            mode_transfert[1],
-                            style: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
-                          )),
+                    width: 200,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color(0xFF007549),
+                        boxShadow: [
+                          BoxShadow(
+                              color: const Color(0xFF007549).withOpacity(.255),
+                              blurRadius: 3,
+                              spreadRadius: 3,
+                              offset: const Offset(0, 2))
+                        ]),
+                    child: const Text(
+                      'Effectuer un Envoie',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                        color: Color.fromARGB(255, 255, 255, 255),
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 240),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      height: 50,
-                      width: 170,
-                      child: ListTile(
-                          leading: Radio(
-                            value: mode_transfert[2],
-                            groupValue: state.mode == mode_transfert[2]
-                                ? mode_transfert[2]
-                                : '',
-                            onChanged: (value) {
-                              context
-                                  .read<BlocBloc6>()
-                                  .add(Modes_envoie(mode: mode_transfert[2]));
-                            },
-                          ),
-                          title: Text(
-                            mode_transfert[2],
-                            style: const TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
-                          )),
-                    ),
-                  ),
-                ),
+                )
               ],
             );
           },
         ),
-
-        const SizedBox(
-          height: 60,
-        ),
-
-        //bouton d'envoie.....................................
-        GestureDetector(
-          onTap: () {
-            //boite de dialogue pour entrer le numero et le montant............................................
-            envoi();
-          },
-          child: Container(
-            height: 50,
-            width: 200,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color(0xFF007549),
-                boxShadow: [
-                  BoxShadow(
-                      color: const Color(0xFF007549).withOpacity(.255),
-                      blurRadius: 3,
-                      spreadRadius: 3,
-                      offset: const Offset(0, 2))
-                ]),
-            child: const Text(
-              'Effectuer un Envoie',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 17,
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-            ),
-          ),
-        )
       ]),
     );
   }
@@ -227,17 +237,15 @@ class _envoieState extends State<envoie> {
                       height: 250,
                       width: 350,
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(.8),
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(.1),
-                            blurRadius: 4,
-                            spreadRadius: 3,
-                            offset: const Offset(0, 2)
-                          )
-                        ]
-                      ),
+                          color: Colors.white.withOpacity(.8),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4,
+                                spreadRadius: 3,
+                                offset: const Offset(0, 2))
+                          ]),
                       child: SingleChildScrollView(
                         child: Center(
                           child: Column(
@@ -437,7 +445,6 @@ class _envoieState extends State<envoie> {
                                             ),
                                             Text(
                                               'Vous êtes sur le point d\'éffecrtuer un envoi de ${controles.text} via le numéro ${controle.text}',
-                                              
                                             ),
                                             //sizedbox
                                             const SizedBox(

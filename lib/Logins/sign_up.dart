@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
 
 import '../features/bloc/presentation/bloc/bloc_bloc.dart';
 
