@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
+import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
@@ -1160,7 +1161,11 @@ class _resume_couvertureState extends State<resume_couverture> {
                 children: [
                   Bounce(
                     duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<BlocBloc3>().add(Barre_navigation(
+                          element_body: const reclamation(),
+                          element_appbar: const reclamation1_appbar()));
+                    },
                     child: Container(
                       height: 120,
                       width: 200,
@@ -1221,7 +1226,11 @@ class _resume_couvertureState extends State<resume_couverture> {
                 children: [
                   Bounce(
                     duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<BlocBloc3>().add(Barre_navigation(
+                          element_body: const mes_informations(),
+                          element_appbar: const reclamation1_appbar()));
+                    },
                     child: Container(
                       height: 120,
                       width: 200,
@@ -1247,7 +1256,11 @@ class _resume_couvertureState extends State<resume_couverture> {
                   ),
                   Bounce(
                     duration: const Duration(milliseconds: 500),
-                    onPressed: () {},
+                    onPressed: () {
+                      context.read<BlocBloc3>().add(Barre_navigation(
+                          element_body: const ajouter_couverture(),
+                          element_appbar: const reclamation1_appbar()));
+                    },
                     child: Container(
                       height: 120,
                       width: 200,
@@ -1278,5 +1291,34 @@ class _resume_couvertureState extends State<resume_couverture> {
         ],
       ),
     );
+  }
+}
+
+class Souscrir_pour_moi extends StatefulWidget {
+  const Souscrir_pour_moi({super.key});
+
+  @override
+  State<Souscrir_pour_moi> createState() => _Souscrir_pour_moiState();
+}
+
+class _Souscrir_pour_moiState extends State<Souscrir_pour_moi> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      IconButton(
+          onPressed: () {
+            context.read<BlocBloc3>().add(Barre_navigation(
+                element_body: const assurance(),
+                element_appbar: const appbar_assurance()));
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          )),
+      const SizedBox(
+        width: 50,
+      ),
+      Image.asset(height: 150, width: 250, 'images/Sahel_Assurance.png')
+    ]);
   }
 }

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sahel_pay/Acceuil/home.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
+import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 
 class transactions1 extends StatefulWidget {
   final int nombre;
@@ -12,6 +16,11 @@ class transactions1 extends StatefulWidget {
 }
 
 class _transactions1State extends State<transactions1> {
+
+  returner(){
+    context.read<BlocBloc3>().add(Barre_navigation(
+                element_body: const HomePage(), element_appbar: appbar_home()));
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -145,13 +154,67 @@ class _transactions1State extends State<transactions1> {
   }
 }
 
-// ignore: non_constant_identifier_names
-Widget appbar_transaction1() {
-  return const Text(
-    'Mes Transactions',
-    style: TextStyle(
-      color: Colors.white,
-      fontWeight: FontWeight.bold,
-    ),
-  );
+class appbar_transaction1 extends StatefulWidget {
+  const appbar_transaction1({super.key});
+
+  @override
+  State<appbar_transaction1> createState() => _appbar_transaction1State();
 }
+
+class _appbar_transaction1State extends State<appbar_transaction1> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+    //mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      IconButton(
+          onPressed: () {
+            context.read<BlocBloc3>().add(Barre_navigation(
+                element_body: const HomePage(), element_appbar: appbar_home()));
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          )),
+      const SizedBox(
+        width: 70,
+      ),
+      const Text(
+        'Mes Transactions',
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  );
+  }
+}
+
+// ignore: non_constant_identifier_names
+// Widget appbar_transaction1(context, returner) {
+//   return Row(
+//     //mainAxisAlignment: MainAxisAlignment.spaceAround,
+//     children: [
+//       IconButton(
+//           onPressed: () {
+//             returner();
+//           },
+//           icon: const Icon(
+//             Icons.arrow_back,
+//             color: Colors.white,
+//           )),
+//       const SizedBox(
+//         width: 70,
+//       ),
+//       const Text(
+//         'Mes Transactions',
+//         style: TextStyle(
+//           color: Colors.white,
+//           fontWeight: FontWeight.bold,
+//         ),
+//       ),
+//     ],
+//   );
+// }
+

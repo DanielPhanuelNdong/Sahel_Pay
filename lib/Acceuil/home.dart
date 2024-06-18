@@ -129,7 +129,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 340, top: 110),
+                    padding: const EdgeInsets.only(left: 300, top: 100),
                     child: BlocBuilder<BlocBloc4, Visibility_solde_state>(
                       builder: (context, state) {
                         return BlocSelector<BlocBloc4, Visibility_solde_state,

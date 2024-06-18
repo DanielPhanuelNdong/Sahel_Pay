@@ -7,7 +7,7 @@ import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
 
 import 'forget_passe.dart';
-import 'sign_up.dart';
+import 'sign_up/sign_up.dart';
 
 class Sign_in extends StatefulWidget {
   const Sign_in({super.key});

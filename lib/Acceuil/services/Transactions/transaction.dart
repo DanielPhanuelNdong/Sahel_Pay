@@ -12,6 +12,7 @@ class Transactions extends StatefulWidget {
 }
 
 class _TransactionsState extends State<Transactions> {
+
   @override
   Widget build(BuildContext context) {
     //double h = MediaQuery.of(context).size.height;
@@ -37,7 +38,7 @@ class _TransactionsState extends State<Transactions> {
                   element_body: const transactions1(
                     nombre: 15,
                   ),
-                  element_appbar: appbar_transaction1()));
+                  element_appbar: const appbar_transaction1()));
                 },
                 child: const Text('Voir Plus', style: TextStyle(color: Colors.green),
                 ))
@@ -53,7 +54,7 @@ class _TransactionsState extends State<Transactions> {
                   element_body: const transactions1(
                     nombre: 15,
                   ),
-                  element_appbar: appbar_transaction1()));
+                  element_appbar: const appbar_transaction1()));
             },
             child: Container(
               height: 250,
