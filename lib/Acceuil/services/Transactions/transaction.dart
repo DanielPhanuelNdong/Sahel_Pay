@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sizer/sizer.dart';
 
 class Transactions extends StatefulWidget {
   const Transactions({super.key});
@@ -25,11 +26,11 @@ class _TransactionsState extends State<Transactions> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              const Text(
+              Text(
                 'Vos 04 dernières transactions',
                 style: TextStyle(
-                    color: Color(0xFFc75c0c),
-                    fontSize: 15,
+                    color: const Color(0xFFc75c0c),
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.bold),
               ),
               GestureDetector(
@@ -44,9 +45,9 @@ class _TransactionsState extends State<Transactions> {
                 ))
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: Divider(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 2.w),
+            child: const Divider(),
           ),
           GestureDetector(
             onTap: () {
@@ -57,15 +58,15 @@ class _TransactionsState extends State<Transactions> {
                   element_appbar: const appbar_transaction1()));
             },
             child: Container(
-              height: 250,
+              height: 30.h,
               width: w,
               child:  Padding(
       padding: const EdgeInsets.only(left: 10, right: 10, top: 2, ),
       child: ListView.separated(
           itemBuilder: (context, index) {
             return Container(
-              height: 60,
-              width: 300,
+              height: 8.h,
+              width: 30.w,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 255, 255, 255),
                   boxShadow: [
@@ -94,16 +95,16 @@ class _TransactionsState extends State<Transactions> {
                                   '07 Juin 2024',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                                SizedBox(
+                                  width: .5.w,
                                 ),
                                 Container(
-                                  height: 20,
-                                  width: 2,
+                                  height: 2.h,
+                                  width: 0.5.w,
                                   color: Colors.black.withOpacity(.4),
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                                SizedBox(
+                                  width: 0.6.w,
                                 ),
                                 const Text(
                                   '10h15',

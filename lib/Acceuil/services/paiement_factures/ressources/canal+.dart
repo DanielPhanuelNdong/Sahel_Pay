@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 //ignore: non_constant_identifier_names
 Future canal(context) async {
@@ -9,7 +10,7 @@ Future canal(context) async {
     child: ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(40.0)),
       child: Container(
-        height: 370,
+        height: 40.h,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: const Color(0xFFf7efe4).withOpacity(.5),
@@ -31,18 +32,18 @@ Future canal(context) async {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                            height: 130, width: 130, 'images/canal+2.png')),
+                            height: 14.h, width: 40.w, 'images/canal+2.png')),
 
                     //Bienvenu sur le service Canal+.......
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.w),
                       child: Text(
                         'Bienvenu sur canal+ ',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Color(0xFFc75c0c),
+                            color: const Color(0xFFc75c0c),
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 12.sp),
                       ),
                     ),
                   ],
@@ -50,8 +51,8 @@ Future canal(context) async {
               ),
 
               //sizedbox
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 1.h,
               ),
 
               Column(
@@ -61,8 +62,8 @@ Future canal(context) async {
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
                     child: Container(
-                      height: 40,
-                      width: 310,
+                      height: 4.h,
+                      width: 75.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: const Color(0xFF007549),
@@ -83,8 +84,8 @@ Future canal(context) async {
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
                     child: Container(
-                      height: 40,
-                      width: 310,
+                      height: 4.h,
+                      width: 75.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: const Color(0xFF007549),
@@ -105,8 +106,8 @@ Future canal(context) async {
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
                     child: Container(
-                      height: 40,
-                      width: 310,
+                      height: 4.h,
+                      width: 75.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: const Color(0xFF007549),
@@ -127,8 +128,8 @@ Future canal(context) async {
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
                     child: Container(
-                      height: 40,
-                      width: 310,
+                      height: 4.h,
+                      width: 75.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: const Color(0xFF007549),

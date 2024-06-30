@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sizer/sizer.dart';
 
 import 'wallets_banques/angola/w_b_angola.dart';
 import 'wallets_banques/benin/w_b_benin.dart';
@@ -22,11 +23,11 @@ class _Choix_paysState extends State<Choix_pays> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.only(top: 20, ),
+          Padding(
+            padding: EdgeInsets.only(top: 2.h, ),
             child: Text(
               'Veuillez sélectionner le pays',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17, color: Color(0xFFc75c0c)),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14.sp, color: const Color(0xFFc75c0c)),
             ),
           ),
           Center(
@@ -34,8 +35,8 @@ class _Choix_paysState extends State<Choix_pays> {
               height: 295,
               width: MediaQuery.of(context).size.width,
               child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 5, left: 30, right: 30, bottom: 10),
+                padding: EdgeInsets.only(
+                    top: .5.h, left: 8.w, right: 8.w, bottom: 1.h),
                 child: Center(
                   child: GridView.count(
                     physics: const NeverScrollableScrollPhysics(),
@@ -46,7 +47,7 @@ class _Choix_paysState extends State<Choix_pays> {
                       //Cameroun........................................
                       Padding(
                         padding:
-                            const EdgeInsets.only(top: 35, left: 35, right: 35),
+                            EdgeInsets.only(top: 3.h, left: 9.w, right: 9.w),
                         child: Bounce(
                           duration: const Duration(milliseconds: 500),
                           onPressed: () {
@@ -60,7 +61,7 @@ class _Choix_paysState extends State<Choix_pays> {
                       //Angola................................
                       Padding(
                         padding:
-                            const EdgeInsets.only(top: 35, left: 35, right: 35),
+                            EdgeInsets.only(top: 3.h, left: 9.w, right: 9.w),
                         child: Bounce(
                           duration: const Duration(milliseconds: 500),
                           onPressed: () {
@@ -72,8 +73,8 @@ class _Choix_paysState extends State<Choix_pays> {
                       ),
                       //RDCongo................................................
                       Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 35, left: 35, right: 35),
+                        padding: EdgeInsets.only(
+                            bottom: 3.h, left: 9.w, right: 9.w),
                         child: Bounce(
                           duration: const Duration(milliseconds: 500),
                           onPressed: () {
@@ -85,8 +86,8 @@ class _Choix_paysState extends State<Choix_pays> {
                       ),
                       //Benin..............................
                       Padding(
-                        padding: const EdgeInsets.only(
-                            bottom: 35, left: 35, right: 35),
+                        padding: EdgeInsets.only(
+                            bottom: 3.h, left: 9.w, right: 9.w),
                         child: Bounce(
                           duration: const Duration(milliseconds: 500),
                           onPressed: () {

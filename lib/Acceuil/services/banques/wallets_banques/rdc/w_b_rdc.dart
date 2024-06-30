@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:sahel_pay/Acceuil/services/banques/wallets_banques/envoi_banque.dart';
+import 'package:sizer/sizer.dart';
 
 class w_b_rdc extends StatefulWidget {
   const w_b_rdc({super.key});
@@ -14,31 +15,30 @@ class _w_b_rdcState extends State<w_b_rdc> {
   Widget build(BuildContext context) {
     double screen_width = MediaQuery.of(context).size.width;
     return Container(
-      height: 700,
+      height: 70.h,
         width: screen_width,
         decoration: const BoxDecoration(
           color: Color.fromARGB(255, 252, 250, 250),
         ),
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 20),
+          padding: EdgeInsets.only(top: 2.h, bottom: 2.h),
           child: Column(
             //mainAxisAlignment: MainAxisAlignment.start,
             //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               //Banques.................................................................
               //sizedbox
-              const Padding(
-                padding: EdgeInsets.only(right: 200),
+              Center(
                 child: Text(
                   'Banques RDC',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold, color: const Color(0xFFc75c0c),),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
+              SizedBox(height: 1.h,),
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -56,8 +56,8 @@ class _w_b_rdcState extends State<w_b_rdc> {
                             envoi_banque(context);
                           },
                           child: Container(
-                              height: 60,
-                              width: 60,
+                              height: 6.h,
+                              width: 13.w,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
                                   boxShadow: [
@@ -75,7 +75,7 @@ class _w_b_rdcState extends State<w_b_rdc> {
                               )),
                         ),
                     
-                        const SizedBox(width: 30,),
+                        SizedBox(width: 8.w,),
                     
                         Bounce(
                           duration: const Duration(milliseconds: 500),
@@ -83,8 +83,8 @@ class _w_b_rdcState extends State<w_b_rdc> {
                             envoi_banque(context);
                           },
                           child: Container(
-                              height: 60,
-                              width: 60,
+                              height: 6.h,
+                              width: 13.w,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
                                   boxShadow: [
@@ -102,7 +102,7 @@ class _w_b_rdcState extends State<w_b_rdc> {
                               )),
                         ),
                     
-                        const SizedBox(width: 30,),
+                        SizedBox(width: 8.w,),
                     
                         Bounce(
                           duration: const Duration(milliseconds: 500),
@@ -110,8 +110,8 @@ class _w_b_rdcState extends State<w_b_rdc> {
                             envoi_banque(context);
                           },
                           child: Container(
-                              height: 60,
-                              width: 60,
+                              height: 6.h,
+                              width: 13.w,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
                                   boxShadow: [
@@ -133,14 +133,13 @@ class _w_b_rdcState extends State<w_b_rdc> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10,),
+              SizedBox(height: 1.h,),
               
               //wallets..............................................
-              const Padding(
-                padding: EdgeInsets.only(right: 210),
+              Center(
                 child: Text(
                   'Wallets RDC',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold, color: const Color(0xFFc75c0c),),
                 ),
               ),
               ],

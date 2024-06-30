@@ -6,6 +6,7 @@ import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
+import 'package:sizer/sizer.dart';
 
 class Acceuil extends StatefulWidget {
   const Acceuil({super.key});
@@ -83,7 +84,7 @@ class _AcceuilState extends State<Acceuil> {
       
           //............................................barre de navigation
           bottomNavigationBar: Container(
-            height: 97,
+            height: 12.h,
             child: BottomAppBar(
                 elevation: 3,
                 shadowColor: Colors.black,
@@ -111,7 +112,7 @@ class _AcceuilState extends State<Acceuil> {
                                     element_appbar: appbar_home())
                                     );
                               },
-                              icon: Icon(Icons.home, size: isSelected ? 30 : 25),
+                              icon: Icon(Icons.home, size: isSelected ? 25.sp : 20.sp),
                               //isSelected: true,
                             ),
                             Visibility(
@@ -127,8 +128,8 @@ class _AcceuilState extends State<Acceuil> {
                       },
                     ),
                     //Sizedbox
-                    const SizedBox(
-                      width: 70,
+                    SizedBox(
+                      width: 17.w,
                     ),
       
                     //Historiques
@@ -150,7 +151,7 @@ class _AcceuilState extends State<Acceuil> {
                               },
                               icon: Icon(
                                 Icons.list,
-                                size: isSelected ? 30 : 25,
+                                size: isSelected ? 25.sp : 20.sp,
                               ),
                               //isSelected: true,
                             ),
@@ -164,8 +165,8 @@ class _AcceuilState extends State<Acceuil> {
                         );
                       },
                     ),
-                    const SizedBox(
-                      width: 70,
+                    SizedBox(
+                      width: 17.w,
                     ),
                     BlocSelector<BlocBloc3, Barre_navigation_satate, bool>(
                       selector: (state) {
@@ -185,7 +186,7 @@ class _AcceuilState extends State<Acceuil> {
                               },
                               icon: Icon(
                                 Icons.settings,
-                                size: isSelected ? 30 : 25,
+                                size: isSelected ? 25.sp : 20.sp,
                               ),
                             ),
                             Visibility(
@@ -220,7 +221,7 @@ class _AcceuilState extends State<Acceuil> {
                       // enterBottomSheetDuration: const Duration(seconds: 2),
                       // exitBottomSheetDuration: const Duration(seconds: 2),
                       Padding(
-                        padding: const EdgeInsets.only(top: 200),
+                        padding: EdgeInsets.only(top: 20.h),
                         child: Center(
                           child: Column(
                             children: [
@@ -266,12 +267,12 @@ class _AcceuilState extends State<Acceuil> {
                                       const SizedBox(
                                         height: 5,
                                       ),
-                                      const Text(
+                                      Text(
                                         'Payement \nMarchant',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20,
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -299,12 +300,12 @@ class _AcceuilState extends State<Acceuil> {
                                       const SizedBox(
                                         height: 5,
                                       ),
-                                      const Text(
+                                      Text(
                                         'Transactions\n ',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20,
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -323,19 +324,19 @@ class _AcceuilState extends State<Acceuil> {
                                                     element_body:
                                                         const assurance(),
                                                     element_appbar:
-                                                        appbar_assurance()));
+                                                        const appbar_assurance()));
                                           },
                                           child: Image.asset(
                                               'images/assurrance.png')),
                                       const SizedBox(
                                         height: 5,
                                       ),
-                                      const Text(
+                                      Text(
                                         'Assurance\n ',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 20,
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.bold),
                                       )
                                     ],
@@ -344,8 +345,8 @@ class _AcceuilState extends State<Acceuil> {
                               ),
       
                               //Sizedbox................
-                              const SizedBox(
-                                height: 20,
+                              SizedBox(
+                                height: 2.h,
                               ),
                               //...........bouton back
                               IconButton(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import 'ressources/canal+.dart';
 import 'ressources/eau/eau.dart';
@@ -36,11 +37,11 @@ class _payer_factureState extends State<payer_facture> {
   Widget build(BuildContext context) {
     double screen_width = MediaQuery.of(context).size.width;
     return Container(
-      height: 700,
-        width: screen_width,
-        decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 252, 250, 250),
-        ),
+      height: 70.h,
+      width: screen_width,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(255, 252, 250, 250),
+      ),
       child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 20, bottom: 20),
@@ -49,17 +50,23 @@ class _payer_factureState extends State<payer_facture> {
             //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               //camwater..............................................
-              const Padding(
-                padding: EdgeInsets.only(right: 350),
+              Padding(
+                padding: EdgeInsets.only(right: 85.w),
                 child: Text(
                   'Eau',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFc75c0c),
+                  ),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
+              SizedBox(
+                height: 1.h,
+              ),
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -75,8 +82,8 @@ class _payer_factureState extends State<payer_facture> {
                           factures_eau(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                            width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -86,8 +93,7 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
                               'images/camwater.png',
                               fit: BoxFit.cover,
@@ -99,18 +105,26 @@ class _payer_factureState extends State<payer_facture> {
               ),
               //eneo.................................................................
               //sizedbox
-              const SizedBox(height: 10,),
-              const Padding(
-                padding: EdgeInsets.only(right: 290),
+              SizedBox(
+                height: 1.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 70.w),
                 child: Text(
                   'Electricité',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFc75c0c),
+                  ),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
+              SizedBox(
+                height: 1.h,
+              ),
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -126,8 +140,8 @@ class _payer_factureState extends State<payer_facture> {
                           factures_eneo(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                            width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -137,8 +151,7 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
                               'images/eneo.png',
                               fit: BoxFit.cover,
@@ -150,18 +163,26 @@ class _payer_factureState extends State<payer_facture> {
               ),
               //Canal+........................................................
               //sizedbox
-              const SizedBox(height: 10,),
-              const Padding(
-                padding: EdgeInsets.only(right: 350),
+              SizedBox(
+                height: 1.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 85.w),
                 child: Text(
                   'TV',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFFc75c0c),
+                  ),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -178,8 +199,8 @@ class _payer_factureState extends State<payer_facture> {
                           canal(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                            width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -189,26 +210,25 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
                               'images/canal+.png',
                               fit: BoxFit.cover,
                             )),
                       ),
                       //startimes........
-                      const SizedBox(
-                        width: 50,
+                      SizedBox(
+                        width: 5.h,
                       ),
-                      
+
                       Bounce(
                         duration: const Duration(milliseconds: 500),
                         onPressed: () {
                           startimes(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                            width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -218,8 +238,7 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
                               'images/startimes.png',
                               fit: BoxFit.cover,
@@ -231,19 +250,27 @@ class _payer_factureState extends State<payer_facture> {
               ),
               //camtel......................................................
               //sizedbox
-              const SizedBox(height: 10,),
-              const Padding(
-                padding: EdgeInsets.only(right: 270),
+              SizedBox(
+                height: 1.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 70.w),
                 child: Text(
                   'Opérateurs',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFc75c0c),
+                  ),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
-              
+              SizedBox(
+                height: 1.h,
+              ),
+
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -260,8 +287,8 @@ class _payer_factureState extends State<payer_facture> {
                           operater_camtel(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                            width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -271,18 +298,17 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
-                              height: 60,
-                              width: 60,
+                              height: 7.h,
+                              width: 13.w,
                               'images/camtel.png',
                               fit: BoxFit.cover,
                             )),
                       ),
 
-                      const SizedBox(
-                        width: 50,
+                      SizedBox(
+                        width: 13.w,
                       ),
                       //Orange........................
                       Bounce(
@@ -291,8 +317,8 @@ class _payer_factureState extends State<payer_facture> {
                           operater_orange(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                              width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -302,18 +328,17 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
-                              height: 60,
-                              width: 60,
+                              height: 7.h,
+                              width: 13.w,
                               'images/orange.png',
                               fit: BoxFit.cover,
                             )),
                       ),
 
-                      const SizedBox(
-                        width: 50,
+                      SizedBox(
+                        width: 13.w,
                       ),
                       //MTN........................
                       Bounce(
@@ -322,8 +347,8 @@ class _payer_factureState extends State<payer_facture> {
                           operater_mtn(context);
                         },
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                              width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -333,11 +358,10 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
-                              height: 60,
-                              width: 60,
+                              height: 7.h,
+                              width: 13.w,
                               'images/mtn.png',
                               fit: BoxFit.cover,
                             )),
@@ -346,21 +370,29 @@ class _payer_factureState extends State<payer_facture> {
                   ),
                 ),
               ),
-              
+
               //Sahel pay......................................................
               //sizedbox
-              const SizedBox(height: 10,),
-              const Padding(
-                padding: EdgeInsets.only(right: 230),
+              SizedBox(
+                height: 1.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 60.w),
                 child: Text(
                   'Credit du Sahel',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFc75c0c),
+                  ),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
+              SizedBox(
+                height: 1.h,
+              ),
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -372,25 +404,24 @@ class _payer_factureState extends State<payer_facture> {
                     children: [
                       Bounce(
                         duration: const Duration(milliseconds: 500),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                              width: 13.w,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withOpacity(.15),
-                                    blurRadius: 3,
-                                    spreadRadius: 2,
-                                    //offset: const Offset(0,2),
-                                  )
-                                ],
+                              borderRadius: BorderRadius.circular(50),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(.15),
+                                  blurRadius: 3,
+                                  spreadRadius: 2,
+                                  //offset: const Offset(0,2),
+                                )
+                              ],
                             ),
                             child: Image.asset(
-                              height: 60,
-                              width: 60,
+                              height: 7.h,
+                              width: 13.w,
                               'images/credit_sahel.png',
                               fit: BoxFit.cover,
                             )),
@@ -399,18 +430,26 @@ class _payer_factureState extends State<payer_facture> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10,),
-              const Padding(
-                padding: EdgeInsets.only(right: 225),
+              SizedBox(
+                height: 1.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 60.w),
                 child: Text(
                   'Autres factures',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFFc75c0c),),
+                  style: TextStyle(
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.bold,
+                    color: const Color(0xFFc75c0c),
+                  ),
                 ),
               ),
               //sizedbox
-              const SizedBox(height: 10,),
+              SizedBox(
+                height: 1.h,
+              ),
               Container(
-                height: 100,
+                height: 10.h,
                 width: screen_width,
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
@@ -423,32 +462,30 @@ class _payer_factureState extends State<payer_facture> {
                       //CNPS.......................
                       Bounce(
                         duration: const Duration(milliseconds: 500),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                              width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50)),
                             child: Image.asset(
-                              height: 60,
-                              width: 60,
+                              height: 7.h,
+                              width: 13.w,
                               'images/cnps.png',
                               fit: BoxFit.cover,
                             )),
                       ),
                       //startimes........
-                      const SizedBox(
-                        width: 50,
+                      SizedBox(
+                        width: 13.w,
                       ),
                       //Fecafoot........................
                       Bounce(
                         duration: const Duration(milliseconds: 500),
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Container(
-                            height: 60,
-                            width: 60,
+                            height: 7.h,
+                              width: 13.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 boxShadow: [
@@ -458,11 +495,10 @@ class _payer_factureState extends State<payer_facture> {
                                     spreadRadius: 2,
                                     //offset: const Offset(0,2),
                                   )
-                                ]
-                                ),
+                                ]),
                             child: Image.asset(
-                              height: 60,
-                              width: 60,
+                              height: 7.h,
+                              width: 13.w,
                               'images/fecafoot.png',
                               fit: BoxFit.cover,
                             )),
@@ -503,28 +539,28 @@ class _payer_factureState extends State<payer_facture> {
                 child: Column(
                   children: [
                     //sizedbox
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     // Entrer les informations necessaires
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veillez entrer les informations\n nécessaires',
                       style: TextStyle(
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 13.sp),
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     Container(
-                      height: 250,
-                      width: 350,
+                      height: 27.h,
+                      width: 80.w,
                       decoration: BoxDecoration(
                           color: Colors.white.withOpacity(.8),
                           borderRadius: BorderRadius.circular(20),
@@ -593,8 +629,8 @@ class _payer_factureState extends State<payer_facture> {
                               ),
 
                               //sizebox
-                              const SizedBox(
-                                height: 10,
+                              SizedBox(
+                                height: 1.h,
                               ),
 
                               //Entrer le montant
@@ -651,8 +687,8 @@ class _payer_factureState extends State<payer_facture> {
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //bouton de confirmation
@@ -665,8 +701,8 @@ class _payer_factureState extends State<payer_facture> {
                             Get.back();
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 25.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -674,12 +710,12 @@ class _payer_factureState extends State<payer_facture> {
                                   Border.all(color: const Color(0xFF007549)),
                               color: Colors.white,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Annuler',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 12.sp),
                             ),
                           ),
                         ),
@@ -700,15 +736,15 @@ class _payer_factureState extends State<payer_facture> {
                                 textConfirm: "Valider",
                                 title: 'Confirmation de paiement',
                                 titlePadding: const EdgeInsets.only(top: 20),
-                                titleStyle: const TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                titleStyle: TextStyle(
+                                    color: const Color(0xFFc75c0c),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                    fontSize: 12.sp),
                                 content: Form(
                                   key: formKey2,
                                   child: //Entrer le code PIN....................................
                                       Container(
-                                    height: 220,
+                                    height: 22.h,
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
                                         color: Colors.white.withOpacity(.4),
@@ -729,15 +765,15 @@ class _payer_factureState extends State<payer_facture> {
                                         child: Column(
                                           children: [
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
                                             Text(
                                               'Vous êtes sur le point de payer une facture de ${controles.text} sur le numéro ${controle.text}',
                                             ),
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //veillez entrer le code PIN pour confirmer
@@ -749,8 +785,8 @@ class _payer_factureState extends State<payer_facture> {
                                             ),
 
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //Zone pour entrer le PIN
@@ -831,10 +867,10 @@ class _payer_factureState extends State<payer_facture> {
                                       title: 'Félicitations',
                                       titlePadding:
                                           const EdgeInsets.only(top: 20),
-                                      titleStyle: const TextStyle(
+                                      titleStyle: TextStyle(
                                           color: Color(0xFFc75c0c),
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 12.sp),
                                       middleText:
                                           'Vous venez d\'éffectuer un paiement d\'une facture d\'un montant de ${controles.text} à partir de votre compte mobile ${controle.text} ',
                                       onConfirm: () {
@@ -847,8 +883,8 @@ class _payer_factureState extends State<payer_facture> {
                             }
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 25.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -866,7 +902,7 @@ class _payer_factureState extends State<payer_facture> {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 12),
                             ),
                           ),
                         ),
@@ -874,8 +910,8 @@ class _payer_factureState extends State<payer_facture> {
                     ),
 
                     //sizedbox
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 4.h,
                     ),
                   ],
                 )),

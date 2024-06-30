@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'banques/pays.dart';
@@ -36,23 +37,23 @@ class _envoieState extends State<envoie> {
     return Center(
       child: Column(children: [
         //sizedbox
-        const SizedBox(
-          height: 40,
+        SizedBox(
+          height: 4.h,
         ),
 
         //selection du mode d'envoie
-        const Text(
+        Text(
           'Veillez sélectionner le mode d\'envoie',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 17,
-            color: Color(0xFFc75c0c),
+            fontSize: 14.sp,
+            color: const Color(0xFFc75c0c),
           ),
         ),
 
         //sizedbox
-        const SizedBox(
-          height: 35,
+        SizedBox(
+          height: 4.h,
         ),
 
         //modes utilisés
@@ -65,8 +66,8 @@ class _envoieState extends State<envoie> {
                     InkWell(
                       onTap: () {},
                       child: Container(
-                        height: 50,
-                        width: 170,
+                        height: 6.h,
+                        width: 42.w,
                         child: ListTile(
                             leading: Radio(
                               focusNode: FocusNode(),
@@ -82,8 +83,8 @@ class _envoieState extends State<envoie> {
                             ),
                             title: Text(
                               mode_transfert[0],
-                              style: const TextStyle(
-                                  fontSize: 13, fontWeight: FontWeight.bold),
+                              style: TextStyle(
+                                  fontSize: 10.sp, fontWeight: FontWeight.bold),
                             )),
                       ),
                     ),
@@ -92,8 +93,8 @@ class _envoieState extends State<envoie> {
                       child: InkWell(
                         onTap: () {},
                         child: Container(
-                          height: 50,
-                          width: 170,
+                          height: 6.h,
+                          width: 42.w,
                           child: ListTile(
                               leading: Radio(
                                 value: mode_transfert[1],
@@ -107,8 +108,8 @@ class _envoieState extends State<envoie> {
                               ),
                               title: Text(
                                 mode_transfert[1],
-                                style: const TextStyle(
-                                    fontSize: 13, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    fontSize: 10.sp, fontWeight: FontWeight.bold),
                               )),
                         ),
                       ),
@@ -118,8 +119,8 @@ class _envoieState extends State<envoie> {
                       child: InkWell(
                         onTap: () {},
                         child: Container(
-                          height: 50,
-                          width: 170,
+                          height: 6.h,
+                          width: 52.w,
                           child: ListTile(
                               leading: Radio(
                                 value: mode_transfert[2],
@@ -133,8 +134,8 @@ class _envoieState extends State<envoie> {
                               ),
                               title: Text(
                                 mode_transfert[2],
-                                style: const TextStyle(
-                                    fontSize: 13, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    fontSize: 10.sp, fontWeight: FontWeight.bold),
                               )),
                         ),
                       ),
@@ -142,8 +143,8 @@ class _envoieState extends State<envoie> {
                   ],
                 ),
 
-                const SizedBox(
-                  height: 60,
+                SizedBox(
+                  height: 6.h,
                 ),
 
                 //bouton d'envoie.....................................
@@ -158,8 +159,8 @@ class _envoieState extends State<envoie> {
                     }
                   },
                   child: Container(
-                    height: 50,
-                    width: 200,
+                    height: 6.h,
+                    width: 50.w,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -171,12 +172,12 @@ class _envoieState extends State<envoie> {
                               spreadRadius: 3,
                               offset: const Offset(0, 2))
                         ]),
-                    child: const Text(
+                    child: Text(
                       'Effectuer un Envoie',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 17,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 12.sp,
+                        color: const Color.fromARGB(255, 255, 255, 255),
                       ),
                     ),
                   ),
@@ -214,28 +215,28 @@ class _envoieState extends State<envoie> {
                 child: Column(
                   children: [
                     //sizedbox
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     // Entrer les informations necessaires
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veillez entrer les informations\n nécessaires',
                       style: TextStyle(
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 13.sp),
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     Container(
-                      height: 250,
-                      width: 350,
+                      height: 27.h,
+                      width: 80.w,
                       decoration: BoxDecoration(
                           color: Colors.white.withOpacity(.8),
                           borderRadius: BorderRadius.circular(20),
@@ -304,8 +305,8 @@ class _envoieState extends State<envoie> {
                               ),
 
                               //sizebox
-                              const SizedBox(
-                                height: 10,
+                              SizedBox(
+                                height: 1.h,
                               ),
 
                               //Entrer le montant
@@ -362,8 +363,8 @@ class _envoieState extends State<envoie> {
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //bouton de confirmation
@@ -376,8 +377,8 @@ class _envoieState extends State<envoie> {
                             Get.back();
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 25.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -385,12 +386,12 @@ class _envoieState extends State<envoie> {
                                   Border.all(color: const Color(0xFF007549)),
                               color: Colors.white,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Annuler',
                               style: TextStyle(
                                   color: Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 10.sp),
                             ),
                           ),
                         ),
@@ -558,8 +559,8 @@ class _envoieState extends State<envoie> {
                             }
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 25.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -572,12 +573,12 @@ class _envoieState extends State<envoie> {
                                       spreadRadius: 3,
                                       offset: const Offset(0, 2))
                                 ]),
-                            child: const Text(
+                            child: Text(
                               'Valider',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 10.sp),
                             ),
                           ),
                         ),
@@ -585,8 +586,8 @@ class _envoieState extends State<envoie> {
                     ),
 
                     //sizedbox
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 4.h,
                     ),
                   ],
                 )),

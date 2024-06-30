@@ -5,6 +5,7 @@ import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
+import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Container(
-              height: 160,
+              height: 17.h,
               width: w,
               decoration: BoxDecoration(
                   color: const Color(0xFF007549),
@@ -45,16 +46,16 @@ class _HomePageState extends State<HomePage> {
                 child: Stack(children: [
                   Column(
                     children: [
-                      const Text(
+                      Text(
                         textAlign: TextAlign.center,
                         '+098564669579695',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                            fontSize: 13.sp),
                       ),
-                      const SizedBox(
-                        height: 10,
+                      SizedBox(
+                        height: 1.3.h,
                       ),
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
-                              height: 100,
+                              height: 12.h,
                               width: 220,
                               child: ListTile(
                                 leading: const CircleAvatar(
@@ -73,17 +74,17 @@ class _HomePageState extends State<HomePage> {
                                 ),
                                 title: Text(
                                   titre,
-                                  style: const TextStyle(
-                                    fontSize: 10,
-                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  style: TextStyle(
+                                    fontSize: 9.sp,
+                                    color: const Color.fromARGB(255, 255, 255, 255),
                                   ),
                                 ),
-                                subtitle: const Text(
+                                subtitle: Text(
                                   'M. Clement Junior',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 13,
-                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 10.sp,
+                                    color: const Color.fromARGB(255, 255, 255, 255),
                                   ),
                                 ),
                               ),
@@ -94,29 +95,29 @@ class _HomePageState extends State<HomePage> {
                             BlocBuilder<BlocBloc4, Visibility_solde_state>(
                               builder: (context, state) {
                                 return Container(
-                                  height: 100,
+                                  height: 12.h,
                                   width: 240,
                                   child: ListTile(
-                                    leading: const Icon(
+                                    leading: Icon(
                                       Icons.folder_copy_outlined,
-                                      size: 45,
-                                      color: Color.fromARGB(255, 255, 255, 255),
+                                      size: 30.sp,
+                                      color: const Color.fromARGB(255, 255, 255, 255),
                                     ),
-                                    title: const Text(
+                                    title: Text(
                                       'Votre Solde:',
                                       style: TextStyle(
-                                        fontSize: 10,
+                                        fontSize: 9.sp,
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
+                                            const Color.fromARGB(255, 255, 255, 255),
                                       ),
                                     ),
                                     subtitle: Text(
                                       state.solde,
-                                      style: const TextStyle(
-                                        fontSize: 13,
+                                      style: TextStyle(
+                                        fontSize: 11.sp,
                                         fontWeight: FontWeight.bold,
                                         color:
-                                            Color.fromARGB(255, 255, 255, 255),
+                                            const Color.fromARGB(255, 255, 255, 255),
                                       ),
                                     ),
                                   ),
@@ -129,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 300, top: 100),
+                    padding: EdgeInsets.only(left: 85.w, top: 12.h),
                     child: BlocBuilder<BlocBloc4, Visibility_solde_state>(
                       builder: (context, state) {
                         return BlocSelector<BlocBloc4, Visibility_solde_state,
@@ -161,17 +162,17 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //sizedbox
-            const SizedBox(
-              height: 25,
+            SizedBox(
+              height: 3.h,
             ),
 
             //...................................Nos Services
-            const Text(
+            Text(
               'Nos Services',
               style: TextStyle(
                   color: //Color(0xFFFB5606),
-                      Color(0xFFc75c0c),
-                  fontSize: 23,
+                      const Color(0xFFc75c0c),
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.bold),
             ),
 
@@ -211,8 +212,8 @@ class _HomePageState extends State<HomePage> {
                                   },
                                   duration: const Duration(milliseconds: 500),
                                   child: Container(
-                                    height: 55,
-                                    width: 55,
+                                    height: 7.h,
+                                    width: 14.w,
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                       boxShadow: [
@@ -233,8 +234,8 @@ class _HomePageState extends State<HomePage> {
                               },
                             ),
                             //sizedbox
-                            const SizedBox(
-                              height: 10,
+                            SizedBox(
+                              height: 1.h,
                             ),
                             BlocSelector<BlocBloc5, Visibility_services_state,
                                 bool>(
@@ -249,7 +250,7 @@ class _HomePageState extends State<HomePage> {
                                     'Effectuer\n Envoie',
                                     style: TextStyle(
                                         color: couleur2,
-                                        fontSize: 12,
+                                        fontSize: 10.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 );
@@ -259,8 +260,8 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         //sizedbox
-                        const SizedBox(
-                          width: 35,
+                        SizedBox(
+                          width: 10.w,
                         ),
 
                         //retrait
@@ -280,8 +281,8 @@ class _HomePageState extends State<HomePage> {
                                   },
                                   duration: const Duration(milliseconds: 500),
                                   child: Container(
-                                    height: 55,
-                                    width: 55,
+                                    height: 7.h,
+                                    width: 14.w,
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                       boxShadow: [
@@ -302,8 +303,8 @@ class _HomePageState extends State<HomePage> {
                               },
                             ),
                             //sizedbox
-                            const SizedBox(
-                              height: 10,
+                            SizedBox(
+                              height: 1.h,
                             ),
                             BlocSelector<BlocBloc5, Visibility_services_state,
                                 bool>(
@@ -318,7 +319,7 @@ class _HomePageState extends State<HomePage> {
                                     'Effectuer\n Retrait',
                                     style: TextStyle(
                                         color: couleur2,
-                                        fontSize: 12,
+                                        fontSize: 10.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 );
@@ -328,8 +329,8 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         //sizedbox
-                        const SizedBox(
-                          width: 35,
+                        SizedBox(
+                          width: 10.w,
                         ),
 
                         //achat unites
@@ -348,8 +349,8 @@ class _HomePageState extends State<HomePage> {
                               service: const achat_unites()));
                                   },
                                   child: Container(
-                                    height: 55,
-                                    width: 55,
+                                    height: 7.h,
+                                    width: 14.w,
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                       boxShadow: [
@@ -371,8 +372,8 @@ class _HomePageState extends State<HomePage> {
                               },
                             ),
                             //sizedbox
-                            const SizedBox(
-                              height: 10,
+                            SizedBox(
+                              height: 1.h,
                             ),
                             BlocSelector<BlocBloc5, Visibility_services_state,
                                 bool>(
@@ -387,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                                     'Achat\n Unités',
                                     style: TextStyle(
                                         color: couleur2,
-                                        fontSize: 12,
+                                        fontSize: 10.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 );
@@ -397,8 +398,8 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         //sizedbox
-                        const SizedBox(
-                          width: 35,
+                        SizedBox(
+                          width: 10.w,
                         ),
 
                         //payer_facture
@@ -417,8 +418,8 @@ class _HomePageState extends State<HomePage> {
                               Visibility_services(service: const payer_facture()));
                                   },
                                   child: Container(
-                                    height: 55,
-                                    width: 55,
+                                    height: 7.h,
+                                    width: 14.w,
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                       boxShadow: [
@@ -440,8 +441,8 @@ class _HomePageState extends State<HomePage> {
                               },
                             ),
                             //sizedbox
-                            const SizedBox(
-                              height: 10,
+                            SizedBox(
+                              height: 1.h,
                             ),
                             BlocSelector<BlocBloc5, Visibility_services_state,
                                 bool>(
@@ -456,7 +457,7 @@ class _HomePageState extends State<HomePage> {
                                     'Paiement\n Facture',
                                     style: TextStyle(
                                         color: couleur2,
-                                        fontSize: 12,
+                                        fontSize: 10.sp,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 );

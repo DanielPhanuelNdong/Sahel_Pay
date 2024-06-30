@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 // ignore: non_constant_identifier_names
 Future envoi_wallet(context) async {
@@ -34,28 +35,28 @@ Future envoi_wallet(context) async {
                 child: Column(
                   children: [
                     //sizedbox
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     // Entrer les informations necessaires
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veillez entrer les informations\n nécessaires',
                       style: TextStyle(
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 13.sp),
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     Container(
-                      height: 250,
-                      width: 350,
+                      height: 25.h,
+                      width: 80.w,
                       decoration: BoxDecoration(
                           color: Colors.white.withOpacity(.8),
                           borderRadius: BorderRadius.circular(20),
@@ -72,8 +73,8 @@ Future envoi_wallet(context) async {
                             children: [
                               //Entrer le numero
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 25, left: 30, right: 30),
+                                padding: EdgeInsets.only(
+                                    top: 2.h, left: 8.w, right: 8.w),
                                 child: TextFormField(
                                   //style: const TextStyle(color: Color(0xFF007549),),
                                   cursorColor: const Color(0xFFc75c0c),
@@ -124,14 +125,14 @@ Future envoi_wallet(context) async {
                               ),
 
                               //sizebox
-                              const SizedBox(
-                                height: 10,
+                              SizedBox(
+                                height: 1.h,
                               ),
 
                               //Entrer le montant
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 10, left: 30, right: 30),
+                                padding: EdgeInsets.only(
+                                    top: 1.h, left: 8.w, right: 8.w),
                                 child: TextFormField(
                                   //style: const TextStyle(color: Color(0xFFc75c0c),),
                                   controller: controles,
@@ -182,8 +183,8 @@ Future envoi_wallet(context) async {
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //bouton de confirmation
@@ -196,8 +197,8 @@ Future envoi_wallet(context) async {
                             Get.back();
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 40.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -205,12 +206,12 @@ Future envoi_wallet(context) async {
                                   Border.all(color: const Color(0xFF007549)),
                               color: Colors.white,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Annuler',
                               style: TextStyle(
                                   color: Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 12.sp),
                             ),
                           ),
                         ),
@@ -231,15 +232,15 @@ Future envoi_wallet(context) async {
                                 textConfirm: "Valider",
                                 title: 'Confirmation d\'envoi',
                                 titlePadding: const EdgeInsets.only(top: 20),
-                                titleStyle: const TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                titleStyle: TextStyle(
+                                    color: const Color(0xFFc75c0c),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                    fontSize: 12.sp),
                                 content: Form(
                                   key: formKey2,
                                   child: //Entrer le code PIN....................................
                                       Container(
-                                    height: 220,
+                                    height: 22.h,
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
                                         color: Colors.white.withOpacity(.4),
@@ -267,8 +268,8 @@ Future envoi_wallet(context) async {
                                               'Vous êtes sur le point d\'éffecrtuer un envoi de ${controles.text} via le numéro ${controle.text}',
                                             ),
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //veillez entrer le code PIN pour confirmer
@@ -280,14 +281,14 @@ Future envoi_wallet(context) async {
                                             ),
 
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //Zone pour entrer le PIN
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 25, left: 30, right: 30),
+                                              padding: EdgeInsets.only(
+                                                  top: 2.h, left: 8.w, right: 8.w),
                                               child: TextFormField(
                                                 //style: const TextStyle(color: Color(0xFF007549),),
                                                 cursorColor:
@@ -362,10 +363,10 @@ Future envoi_wallet(context) async {
                                       title: 'Félicitations',
                                       titlePadding:
                                           const EdgeInsets.only(top: 20),
-                                      titleStyle: const TextStyle(
-                                          color: Color(0xFFc75c0c),
+                                      titleStyle: TextStyle(
+                                          color: const Color(0xFFc75c0c),
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 12.sp),
                                       middleText:
                                           'Vous venez d\'éffectuer un envoi d\'un montant de ${controles.text} de votre compte Sahel Money vers votre compte mobile ${controle.text} ',
                                       onConfirm: () {
@@ -378,8 +379,8 @@ Future envoi_wallet(context) async {
                             }
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 40.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -392,12 +393,12 @@ Future envoi_wallet(context) async {
                                       spreadRadius: 3,
                                       offset: const Offset(0, 2))
                                 ]),
-                            child: const Text(
+                            child: Text(
                               'Valider',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 12.sp),
                             ),
                           ),
                         ),
@@ -405,8 +406,8 @@ Future envoi_wallet(context) async {
                     ),
 
                     //sizedbox
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 4.h,
                     ),
                   ],
                 )),

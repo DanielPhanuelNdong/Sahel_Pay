@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 //ignore: non_constant_identifier_names
 Future reference_abonnement(context) async {
@@ -9,7 +10,7 @@ Future reference_abonnement(context) async {
     child: ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(40.0)),
       child: Container(
-        height: 400,
+        height: 40.h,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: const Color(0xFFf7efe4).withOpacity(.5),
@@ -25,8 +26,8 @@ Future reference_abonnement(context) async {
             child: Column(
               children: [
                 //sizedbox
-                const SizedBox(
-                  height: 5,
+                SizedBox(
+                  height: .5.h,
                 ),
             
                 Padding(
@@ -37,17 +38,17 @@ Future reference_abonnement(context) async {
                       ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image.asset(
-                              height: 130, width: 130, 'images/camwater2.png')),
+                              height: 14.h, width: 40.w, 'images/camwater2.png')),
                       //Payer avec une référence abonnement.......
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 9.w),
                         child: Text(
                           'Payer avec une référence abonnement',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Color(0xFFc75c0c),
+                              color: const Color(0xFFc75c0c),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                              fontSize: 12.sp),
                         ),
                       ),
                     ],
@@ -55,28 +56,28 @@ Future reference_abonnement(context) async {
                 ),
             
                 //sizedbox
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 2.h,
                 ),
             
                 //liste des references
-                const Text(
+                Text(
                   'Veuillez Entrer le numéro de compte auprès de la compagnie',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Color(0xFF007549),
+                      color: const Color(0xFF007549),
                       fontWeight: FontWeight.bold,
-                      fontSize: 15),
+                      fontSize: 10.sp),
                 ),
             
                 //sizedbox
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: 1.h,
                 ),
             
                 //Entrer le numero de compte
                 Padding(
-                  padding: const EdgeInsets.only(top: 10, left: 30, right: 30),
+                  padding: EdgeInsets.only(top: 1.h, left: 8.w, right: 8.w),
                   child: TextFormField(
                     //style: const TextStyle(color: Color(0xFFc75c0c),),
                     //controller: controle,
@@ -121,8 +122,8 @@ Future reference_abonnement(context) async {
                 ),
             
                 //sizedbox
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 2.h,
                 ),
             
                 //bouton valider..................................
@@ -130,8 +131,8 @@ Future reference_abonnement(context) async {
                   duration: const Duration(milliseconds: 500),
                   onPressed: () {},
                   child: Container(
-                    height: 40,
-                    width: 310,
+                    height: 4.h,
+                      width: 75.w,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         color: const Color(0xFF007549),
@@ -147,8 +148,8 @@ Future reference_abonnement(context) async {
                   ),
                 ),
                 //sizedbox
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 2.h,
                 ),
               ],
             ),

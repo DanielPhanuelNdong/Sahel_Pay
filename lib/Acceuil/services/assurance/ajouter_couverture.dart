@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
+import 'package:sizer/sizer.dart';
 
 // ignore: camel_case_types
 class ajouter_couverture extends StatefulWidget {
@@ -20,8 +21,8 @@ class _ajouter_couvertureState extends State<ajouter_couverture> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 2.5.h,
           ),
           Container(
             height: MediaQuery.of(context).size.height * .70,
@@ -41,20 +42,20 @@ class _ajouter_couvertureState extends State<ajouter_couverture> {
               key: formkey,
               child: Column(
                 children: [
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 2.h,
                   ),
-                  const Text(
+                  Text(
                     textAlign: TextAlign.center,
                     'Veuillez entrer  les informations sur vos proches',
                     style: TextStyle(
-                        color: Color(0xFFc75c0c),
+                        color: const Color(0xFFc75c0c),
                         fontWeight: FontWeight.bold,
-                        fontSize: 15),
+                        fontSize: 12.sp),
                   ),
                   
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 3.h,
                   ),
       
                   //Nom complet
@@ -95,13 +96,13 @@ class _ajouter_couvertureState extends State<ajouter_couverture> {
                     ),
                   ),
       
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 3.h,
                   ),
       
                   //Numéro de téléphone
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 6.w),
                     child: TextFormField(
                       controller: phone_controller,
                       keyboardType: TextInputType.phone,
@@ -137,12 +138,12 @@ class _ajouter_couvertureState extends State<ajouter_couverture> {
                     ),
                   ),
       
-                  const SizedBox(
-                    height: 30,
+                  SizedBox(
+                    height: 3.h,
                   ),
       
                   Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.symmetric(horizontal: 6.w),
                       child: DropdownButtonFormField(
                         hint: Text(
                           'Sélectionnez le forfait',
@@ -172,28 +173,28 @@ class _ajouter_couvertureState extends State<ajouter_couverture> {
                         },
                       )),
                   
-                  const SizedBox(
-                    height: 80,
+                  SizedBox(
+                    height: 8.h,
                   ),
       
                   Bounce(
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
                     child: Container(
-                      height: 35,
-                      width: 350,
+                      height: 4.h,
+                      width: 80.w,
                       decoration: const BoxDecoration(
                           color: Color(0xFFff7900),
                           //borderRadius: BorderRadius.all(Radius.circular(30))
                               ),
                       alignment: Alignment.center,
-                      child: const Text(
+                      child: Text(
                         textAlign: TextAlign.center,
                         'Valider',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 20),
+                            color: const Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 13.sp),
                       ),
                     ),
                   ),

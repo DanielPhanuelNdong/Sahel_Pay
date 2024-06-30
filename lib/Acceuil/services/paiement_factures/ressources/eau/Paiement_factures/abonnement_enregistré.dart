@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 //ignore: non_constant_identifier_names
 Future abonnement_enregistre(context) async {
@@ -8,7 +9,7 @@ Future abonnement_enregistre(context) async {
     child: ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(40.0)),
       child: Container(
-        height: 400,
+        height: 40.h,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: const Color(0xFFf7efe4).withOpacity(.5),
@@ -23,8 +24,8 @@ Future abonnement_enregistre(context) async {
           child: Column(
             children: [
               //sizedbox
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 3.h,
               ),
 
               Padding(
@@ -35,17 +36,17 @@ Future abonnement_enregistre(context) async {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                            height: 130, width: 130, 'images/camwater2.png')),
+                            height: 13.h, width: 30.w, 'images/camwater2.png')),
                     //Payer une référence abonnement enregistrée.......
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6.w),
                       child: Text(
                         'Payer une référence abonnement enregistrée',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Color(0xFFc75c0c),
+                            color: const Color(0xFFc75c0c),
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 12.sp),
                       ),
                     ),
                   ],
@@ -53,18 +54,18 @@ Future abonnement_enregistre(context) async {
               ),
 
               //sizedbox
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 3.h,
               ),
 
               //liste des references
-              const Text(
+              Text(
                         'Liste des références abonnement enregistrée',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Color(0xFF007549),
+                            color: const Color(0xFF007549),
                             fontWeight: FontWeight.bold,
-                            fontSize: 15),
+                            fontSize: 10.sp),
                       ),
             ],
           ),

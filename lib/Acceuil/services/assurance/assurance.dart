@@ -4,6 +4,7 @@ import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
 import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/index.dart';
+import 'package:sizer/sizer.dart';
 
 class assurance extends StatefulWidget {
   const assurance({super.key});
@@ -45,7 +46,7 @@ class _assuranceState extends State<assurance> {
                       //crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Container(
-                          height: 50,
+                          height: 5.h,
                           width: screen_width,
                           alignment: Alignment.center,
                           decoration: const BoxDecoration(
@@ -60,11 +61,11 @@ class _assuranceState extends State<assurance> {
                               ])),
                         ),
                         Image.asset('images/img.png'),
-                        const SizedBox(
-                          height: 5,
+                        SizedBox(
+                          height: .5.h,
                         ),
-                        const SizedBox(
-                          height: 100,
+                        SizedBox(
+                          height: 10.h,
                         ),
                         Bounce(
                           duration: const Duration(milliseconds: 500),
@@ -72,18 +73,18 @@ class _assuranceState extends State<assurance> {
                             if (state.assurance == assurances[0]) {
                               Get.defaultDialog(
                                 title: 'Bravo !',
-                                titleStyle: const TextStyle(
+                                titleStyle: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                  color: Color(0xFFff7900),
+                                  fontSize: 12.sp,
+                                  color: const Color(0xFFff7900),
                                 ),
-                                content: const Text(
+                                content: Text(
                                   textAlign: TextAlign.center,
                                   'Vous venez de vous à la couverture gratuite. Augmentez là en faisant plus de transactions Sahel Money vers Sahel Money ou achats de crédit',
                                   style: TextStyle(
-                                      color: Color(0xFF007549),
+                                      color: const Color(0xFF007549),
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 13),
+                                      fontSize: 8.sp),
                                 ),
                                 barrierDismissible: false,
                                 textConfirm: 'Continuer',
@@ -98,23 +99,27 @@ class _assuranceState extends State<assurance> {
                                               const Souscrir_pour_moi()));
                                 },
                               );
+                            }else{
+                              context.read<BlocBloc3>().add(Barre_navigation(
+                          element_body: const ajouter_couverture(),
+                          element_appbar: const Souscrir_pour_moi()));
                             }
                           },
                           child: Container(
-                            height: 35,
-                            width: 250,
+                            height: 4.h,
+                            width: 85.w,
                             decoration: const BoxDecoration(
                                 color: Color(0xFFff7900),
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(30))),
                             alignment: Alignment.center,
-                            child: const Text(
+                            child: Text(
                               textAlign: TextAlign.center,
                               'Souscription',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 20),
+                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 13.sp),
                             ),
                           ),
                         ),
@@ -152,7 +157,7 @@ class _assuranceState extends State<assurance> {
                         //   ),
                         // ),
                         Container(
-                          height: 50,
+                          height: 5.h,
                           width: screen_width,
                           alignment: Alignment.center,
                           decoration: const BoxDecoration(
@@ -172,8 +177,8 @@ class _assuranceState extends State<assurance> {
                     ),
                   ),
                   Positioned(
-                      top: 290,
-                      left: 60,
+                      top: 35.h,
+                      left: 16.w,
                       child: Row(
                         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -203,8 +208,8 @@ class _assuranceState extends State<assurance> {
                                                 ? true
                                                 : false,
                                         child: Positioned(
-                                          top: 50,
-                                          left: 50,
+                                          top: 6.h,
+                                          left: 11.w,
                                           child:
                                               Image.asset('images/cocher.png'),
                                         ),
@@ -212,11 +217,11 @@ class _assuranceState extends State<assurance> {
                                     ],
                                   ),
                                 ),
-                                const Text(
+                                Text(
                                   'Pour moi',
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 2, 154, 96),
-                                    fontSize: 20,
+                                    color: const Color.fromARGB(255, 2, 154, 96),
+                                    fontSize: 13.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
@@ -224,8 +229,8 @@ class _assuranceState extends State<assurance> {
                             ),
                           ),
 
-                          const SizedBox(
-                            width: 70,
+                          SizedBox(
+                            width: 7.h,
                           ),
 
                           //des proches.....................................
@@ -254,8 +259,8 @@ class _assuranceState extends State<assurance> {
                                                 ? true
                                                 : false,
                                         child: Positioned(
-                                          top: 50,
-                                          left: 50,
+                                          top: 6.h,
+                                          left: 11.w,
                                           child:
                                               Image.asset('images/cocher.png'),
                                         ),
@@ -263,11 +268,11 @@ class _assuranceState extends State<assurance> {
                                     ],
                                   ),
                                 ),
-                                const Text(
+                                Text(
                                   'Des proches',
                                   style: TextStyle(
-                                    color: Color.fromARGB(255, 2, 154, 96),
-                                    fontSize: 20,
+                                    color: const Color.fromARGB(255, 2, 154, 96),
+                                    fontSize: 12.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
@@ -314,10 +319,10 @@ class _appbar_assuranceState extends State<appbar_assurance> {
             Icons.arrow_back,
             color: Colors.white,
           )),
-      const SizedBox(
-        width: 50,
+      SizedBox(
+        width: 11.w,
       ),
-      Image.asset(height: 150, width: 250, 'images/Sahel_Assurance.png')
+      Image.asset(height: 16.h, width: 60.w, 'images/Sahel_Assurance.png')
     ]);
   }
 }

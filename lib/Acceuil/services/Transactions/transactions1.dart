@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sahel_pay/Acceuil/home.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sizer/sizer.dart';
 
 class transactions1 extends StatefulWidget {
   final int nombre;
@@ -28,8 +29,8 @@ class _transactions1State extends State<transactions1> {
       child: ListView.separated(
           itemBuilder: (context, index) {
             return Container(
-              height: 150,
-              width: 300,
+              height: 20.h,
+              width: 35.w,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(255, 255, 255, 255),
                   boxShadow: [
@@ -58,16 +59,16 @@ class _transactions1State extends State<transactions1> {
                                   '07 Juin 2024',
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                                SizedBox(
+                                  width: 0.6.w,
                                 ),
                                 Container(
-                                  height: 20,
-                                  width: 2,
+                                  height: 3.h,
+                                  width: .3.w,
                                   color: Colors.black.withOpacity(.4),
                                 ),
-                                const SizedBox(
-                                  width: 5,
+                                SizedBox(
+                                  width: 0.6.w,
                                 ),
                                 const Text(
                                   '10h15',
@@ -176,8 +177,8 @@ class _appbar_transaction1State extends State<appbar_transaction1> {
             Icons.arrow_back,
             color: Colors.white,
           )),
-      const SizedBox(
-        width: 70,
+      SizedBox(
+        width: 15.w,
       ),
       const Text(
         'Mes Transactions',

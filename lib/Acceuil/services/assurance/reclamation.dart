@@ -1,9 +1,13 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
+import 'package:sizer/sizer.dart';
 
 import 'resume_couverture.dart';
 
@@ -21,6 +25,9 @@ class _reclamationState extends State<reclamation> {
   TextEditingController cause_controller = TextEditingController();
   TextEditingController etablissement_controller = TextEditingController();
   String? dropdowValue;
+  List<XFile> select_Image1 = [];
+  List<XFile?> selectedImages = [];
+  List<XFile?> selectedImages2 = [];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,16 +35,16 @@ class _reclamationState extends State<reclamation> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 2.h,
             ),
-            const Text(
+            Text(
               textAlign: TextAlign.center,
-              'La soumission de fausses informations est considérée comme frauduleuse et punie par',
+              'La soumission de fausses informations est considérée comme frauduleuse et punie par la loi !!!',
               style: TextStyle(
-                  color: Color(0xFF007549),
+                  color: const Color(0xFF007549),
                   fontWeight: FontWeight.bold,
-                  fontSize: 16),
+                  fontSize: 12.sp),
             ),
             const SizedBox(
               height: 20,
@@ -60,20 +67,20 @@ class _reclamationState extends State<reclamation> {
                 key: formkey,
                 child: Column(
                   children: [
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veuillez entrer les informations nécessaires',
                       style: TextStyle(
-                          color: Color(0xFFc75c0c),
+                          color: const Color(0xFFc75c0c),
                           fontWeight: FontWeight.bold,
-                          fontSize: 15),
+                          fontSize: 11.sp),
                     ),
 
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //Date d'admission
@@ -126,8 +133,8 @@ class _reclamationState extends State<reclamation> {
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //Date de sortie
@@ -180,8 +187,8 @@ class _reclamationState extends State<reclamation> {
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     Padding(
@@ -206,8 +213,7 @@ class _reclamationState extends State<reclamation> {
                                 value: 'Désastre naturel',
                                 child: Text("Désastre naturel")),
                             DropdownMenuItem(
-                                value: 'Autres',
-                                child: Text("Autres")),
+                                value: 'Autres', child: Text("Autres")),
                           ],
                           onChanged: (String? newvalue) {
                             setState(() {
@@ -227,8 +233,8 @@ class _reclamationState extends State<reclamation> {
                           },
                         )),
 
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     //Etablissement médical
@@ -269,122 +275,186 @@ class _reclamationState extends State<reclamation> {
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //Photos du carnet d'hospitalisation
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const Column(
+                        Column(
                           children: [
                             Text(
                               'Photos du carnet d\'hospitalisation',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 14),
+                                  fontSize: 11.sp),
                             ),
                             Text(
-                              '(La première de couverture et toutes les pages concernées)',
+                              textAlign: TextAlign.center,
+                              '(La première de couverture et toutes les\n pages concernées)',
                               style: TextStyle(
-                                  color: Color(0xFFc75c0c),
+                                  color: const Color(0xFFc75c0c),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 10),
+                                  fontSize: 9.sp),
                             ),
                           ],
                         ),
                         Row(
                           children: [
+                            // IconButton(
+                            //     onPressed: () {
+                            //       filmer_images2();
+                            //     },
+                            //     icon: const Icon(Icons.camera_alt)),
                             IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.camera_alt)),
-                            IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  filmer_images2();
+                                },
                                 icon: const Icon(Icons.browser_updated)),
                           ],
                         ),
                       ],
                     ),
                     Container(
-                      height: 100,
-                      width: 370,
+                      height: 12.h,
+                      width: 90.w,
                       decoration: BoxDecoration(
                           border: Border.all(
                         color: const Color(0xFF007549),
                       )),
+                      child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: selectedImages2.map((image) {
+                              return image != null ? Container(
+                                height: 10.h,
+                                width: 20.w,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 225, 198, 198),
+                                )),
+                                child: Image.file(File(image.path)),
+                              ) : const SizedBox();
+                            }).toList(),
+                          ),
+                        ),
                     ),
 
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: 1.h,
                     ),
 
                     //Photos de CNI ou acte de naissance
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        const Column(
+                        Column(
                           children: [
                             Text(
                               'Photos de la CNI ou acte de naissance ',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 14),
+                                  fontSize: 11.sp),
                             ),
                             Text(
                               '(acte de naissance pour moins de 18 ans)',
                               style: TextStyle(
-                                  color: Color(0xFFc75c0c),
+                                  color: const Color(0xFFc75c0c),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 10),
+                                  fontSize: 9.sp),
                             ),
                           ],
                         ),
                         Row(
                           children: [
+                            // IconButton(
+                            //     onPressed: () {
+                            //       telecharge_images1();
+                            //     },
+                            //     icon: const Icon(Icons.camera_alt)),
                             IconButton(
-                                onPressed: () {},
-                                icon: const Icon(Icons.camera_alt)),
-                            IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  telecharge_images1();
+                                },
                                 icon: const Icon(Icons.browser_updated)),
                           ],
                         ),
                       ],
                     ),
                     Container(
-                      height: 100,
-                      width: 370,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                        color: const Color(0xFF007549),
-                      )),
-                    ),
+                        height: 12.h,
+                        width: 90.w,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                          color: const Color(0xFF007549),
+                        )),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: selectedImages.map((image) {
+                              return image != null ? Container(
+                                height: 10.h,
+                                width: 20.w,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                  color:
+                                      const Color.fromARGB(255, 225, 198, 198),
+                                )),
+                                child: Image.file(File(image.path)),
+                              ) : const SizedBox();
+                            }).toList(),
+                          ),
+                        )
 
-                    const SizedBox(
-                      height: 25,
+                        // ListView(
+                        //   scrollDirection: Axis.horizontal,
+                        //   children: selectedImages.map((image) {
+                        //     return Padding(
+                        //       padding: const EdgeInsets.all(8.0),
+                        //       child: image != null
+                        //           ? Image.file(File(image.path))
+                        //           : Container(),
+                        //     );
+                        //   }).toList(),
+                        // ),
+
+                        // Container(
+                        //         height: 10.h,
+                        //   width: 20.w,
+                        //   decoration: BoxDecoration(
+                        //       border: Border.all(
+                        //     color: const Color.fromARGB(255, 225, 198, 198),
+                        //   )),
+                        //       )
+                        ),
+
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     Bounce(
                       duration: const Duration(milliseconds: 500),
                       onPressed: () {},
                       child: Container(
-                        height: 35,
-                        width: 350,
+                        height: 4.h,
+                        width: 85.w,
                         decoration: const BoxDecoration(
-                            color: Color(0xFFff7900),
-                            //borderRadius: BorderRadius.all(Radius.circular(30))
-                                ),
+                          color: Color(0xFFff7900),
+                          //borderRadius: BorderRadius.all(Radius.circular(30))
+                        ),
                         alignment: Alignment.center,
-                        child: const Text(
+                        child: Text(
                           textAlign: TextAlign.center,
                           'Valider',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Color.fromARGB(255, 255, 255, 255),
-                              fontSize: 20),
+                              fontSize: 13.sp),
                         ),
                       ),
                     ),
@@ -396,6 +466,38 @@ class _reclamationState extends State<reclamation> {
         ),
       ),
     );
+  }
+
+  Future telecharge_images1() async {
+    final ImagePicker picker = ImagePicker();
+    //select_Image1 = await picker.pickMultiImage();
+    final List<XFile> image1 = await picker.pickMultiImage();
+
+    setState(() {
+      if (image1.isNotEmpty) {
+        selectedImages = image1;
+      }
+    });
+  }
+
+  // ignore: non_constant_identifier_names
+  Future filmer_images2() async {
+    final ImagePicker picker = ImagePicker();
+    //select_Image1 = await picker.pickMultiImage();
+    final List<XFile> image2 = await picker.pickMultiImage();
+
+    setState(() {
+      if (image2.isNotEmpty) {
+        selectedImages2 = image2;
+      }
+    });
+
+    // setState(() {
+    //   if (return_camera2 != null){
+    //     select_Image1 = File(return_camera2.path );
+    //   }
+
+    // });
   }
 }
 
@@ -420,10 +522,10 @@ class _reclamation1_appbarState extends State<reclamation1_appbar> {
             Icons.arrow_back,
             color: Colors.white,
           )),
-      const SizedBox(
-        width: 50,
+      SizedBox(
+        width: 12.w,
       ),
-      Image.asset(height: 150, width: 250, 'images/Sahel_Assurance.png')
+      Image.asset(height: 16.h, width: 60.w, 'images/Sahel_Assurance.png')
     ]);
   }
 }

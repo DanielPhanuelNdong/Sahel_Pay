@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 class achat_unites extends StatefulWidget {
   const achat_unites({super.key});
@@ -441,7 +442,7 @@ class _achat_unitesState extends State<achat_unites> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 5, left: 30, right: 30, bottom: 10),
+      padding: EdgeInsets.only(top: .5.h, left: 10.w, right: 10.w, bottom: 1.h),
       child: Center(
         child: GridView.count(
           crossAxisCount: 2,
@@ -450,7 +451,7 @@ class _achat_unitesState extends State<achat_unites> {
           children: [
             //MTN........................................
             Padding(
-              padding: const EdgeInsets.only(top: 35, left: 35, right: 35),
+              padding: EdgeInsets.only(top: 2.h, left: 6.w, right: 6.w),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
@@ -462,7 +463,7 @@ class _achat_unitesState extends State<achat_unites> {
 
             //Orange................................
             Padding(
-              padding: const EdgeInsets.only(top: 35, left: 35, right: 35),
+              padding: EdgeInsets.only(top: 2.h, left: 6.w, right: 6.w),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
@@ -473,7 +474,7 @@ class _achat_unitesState extends State<achat_unites> {
             ),
             //Blue................................................
             Padding(
-              padding: const EdgeInsets.only(bottom: 35, left: 35, right: 35),
+              padding: EdgeInsets.only(top: 2.h, left: 6.w, right: 6.w),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {
@@ -484,7 +485,7 @@ class _achat_unitesState extends State<achat_unites> {
             ),
             //Nexttel..............................
             Padding(
-              padding: const EdgeInsets.only(bottom: 35, left: 35, right: 35),
+              padding: EdgeInsets.only(top: 2.h, left: 6.w, right: 6.w),
               child: Bounce(
                 duration: const Duration(milliseconds: 500),
                 onPressed: () {

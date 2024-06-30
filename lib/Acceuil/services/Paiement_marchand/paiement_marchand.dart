@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:flutter_bounce/flutter_bounce.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import 'numero_marchand.dart';
 
@@ -42,7 +43,7 @@ Future Paiement_marchands(context) async {
     child: ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(40.0)),
       child: Container(
-        height: 250,
+        height: 25.h,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: const Color(0xFFf7efe4).withOpacity(.5),
@@ -57,24 +58,24 @@ Future Paiement_marchands(context) async {
           child: Column(
             children: [
               //sizedbox
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 3.h,
               ),
 
-              const Padding(
-                padding: EdgeInsets.only(top: 1),
+              Padding(
+                padding: const EdgeInsets.only(top: 1),
                 child: Column(
                   children: [
                     //Paiement marchand.......
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Text(
                         'Paiement marchand',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Color(0xFFc75c0c),
+                            color: const Color(0xFFc75c0c),
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 13.sp),
                       ),
                     ),
                   ],
@@ -82,8 +83,8 @@ Future Paiement_marchands(context) async {
               ),
 
               //sizedbox
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 2.h,
               ),
 
               Column(
@@ -95,8 +96,8 @@ Future Paiement_marchands(context) async {
                       numero_marchand(context);
                     },
                     child: Container(
-                      height: 40,
-                      width: 310,
+                      height: 4.h,
+                      width: 65.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: const Color(0xFF007549),
@@ -118,8 +119,8 @@ Future Paiement_marchands(context) async {
                       QRCodeScans();
                     },
                     child: Container(
-                      height: 40,
-                      width: 310,
+                      height: 4.h,
+                      width: 65.w,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: const Color(0xFF007549),
@@ -153,12 +154,12 @@ Future Paiement_marchands(context) async {
         //persistent: false,
         SingleChildScrollView(
       child: ClipRRect(
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(40.0)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(4.h)),
         child: Container(
           decoration: BoxDecoration(
             color: const Color(0xFFf7efe4).withOpacity(.5),
             borderRadius:
-                const BorderRadius.vertical(top: Radius.circular(10.0)),
+                BorderRadius.vertical(top: Radius.circular(1.h)),
             border: Border.all(
               color: Colors.white.withOpacity(.8), // La couleur de la bordure
               width: 2, // La largeur de la bordure
@@ -171,28 +172,28 @@ Future Paiement_marchands(context) async {
                 child: Column(
                   children: [
                     //sizedbox
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     // Entrer les informations necessaires
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veillez entrer les informations\n nécessaires',
                       style: TextStyle(
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 13.sp),
                     ),
 
                     //sizebox
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: 2.h,
                       ),
 
                     Container(
-                      height: 116,
-                      width: 350,
+                      height: 12.h,
+                      width: 80.w,
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(.8),
                         borderRadius: BorderRadius.circular(20),
@@ -210,14 +211,14 @@ Future Paiement_marchands(context) async {
                           child: Column(
                             children: [
                               //sizebox
-                          const SizedBox(
-                            height: 10,
+                          SizedBox(
+                            height: 1.h,
                           ),
                           
                           //Entrer le montant
                           Padding(
                             padding:
-                                const EdgeInsets.only(top: 10, left: 30, right: 30),
+                                EdgeInsets.only(top: 1.h, left: 7.w, right: 7.w),
                             child: TextFormField(
                               //style: const TextStyle(color: Color(0xFFc75c0c),),
                               controller: controless,
@@ -270,8 +271,8 @@ Future Paiement_marchands(context) async {
                     
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //bouton de confirmation
@@ -284,8 +285,8 @@ Future Paiement_marchands(context) async {
                             Get.back();
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 35.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -293,12 +294,12 @@ Future Paiement_marchands(context) async {
                                   Border.all(color: const Color(0xFF007549)),
                               color: Colors.white,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Annuler',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 13.sp),
                             ),
                           ),
                         ),
@@ -319,16 +320,16 @@ Future Paiement_marchands(context) async {
                                 textConfirm: "Valider",
                                 title: 'Confirmation de paiement',
                                 titlePadding: const EdgeInsets.only(top: 20),
-                                titleStyle: const TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                titleStyle: TextStyle(
+                                    color: const Color(0xFFc75c0c),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                    fontSize: 13.sp),
                                 content: Form(
                                   key: formKey11,
                                   child: //Entrer le code PIN....................................
                                       Container(
-                                    height: 250,
-                                    width: 500,
+                                    height: 25.h,
+                                    width: 130.w,
                                     decoration: BoxDecoration(
                                         color: Colors.white.withOpacity(.4),
                                         borderRadius: BorderRadius.circular(20),
@@ -348,16 +349,16 @@ Future Paiement_marchands(context) async {
                                         child: Column(
                                           children: [
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
                                             Text(
                                               'Vous êtes sur le point d\'éffecrtuer un paiement marchand de ${controless.text} ',
                                               
                                             ),
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //veillez entrer le code PIN pour confirmer
@@ -369,14 +370,14 @@ Future Paiement_marchands(context) async {
                                             ),
 
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //Zone pour entrer le PIN
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 25, left: 30, right: 30),
+                                              padding: EdgeInsets.only(
+                                                  top: 3.h, left: 7.w, right: 7.w),
                                               child: TextFormField(
                                                 //style: const TextStyle(color: Color(0xFF007549),),
                                                 cursorColor:
@@ -451,10 +452,10 @@ Future Paiement_marchands(context) async {
                                       title: 'Félicitations',
                                       titlePadding:
                                           const EdgeInsets.only(top: 20),
-                                      titleStyle: const TextStyle(
+                                      titleStyle: TextStyle(
                                           color: Color(0xFFc75c0c),
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 12.sp),
                                       middleText:
                                           'Vous venez d\'éffectuer un paiement marchand d\'un montant de ${controless.text}',
                                       onConfirm: () {
@@ -474,8 +475,8 @@ Future Paiement_marchands(context) async {
                               }
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 35.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -487,12 +488,12 @@ Future Paiement_marchands(context) async {
                                       spreadRadius: 3,
                                       offset: const Offset(0, 2))
                                 ]),
-                            child: const Text(
+                            child: Text(
                               'Valider',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 13.sp),
                             ),
                           ),
                         ),
@@ -500,8 +501,8 @@ Future Paiement_marchands(context) async {
                     ),
 
                     //sizedbox
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 4.h,
                     ),
                   ],
                 )),

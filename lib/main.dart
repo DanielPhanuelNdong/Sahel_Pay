@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:sahel_pay/Logins/sign_in.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MultiBlocProvider(
         providers: [
           BlocProvider(
             create: (context) => BlocBloc(),
@@ -50,5 +53,7 @@ class MyApp extends StatelessWidget {
           ),
           home: const Sign_in(),
         ));
+      },
+      );
   }
 }

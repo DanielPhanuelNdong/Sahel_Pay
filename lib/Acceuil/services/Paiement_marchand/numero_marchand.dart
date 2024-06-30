@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 TextEditingController controle = TextEditingController();
   TextEditingController controles = TextEditingController();
@@ -38,28 +39,28 @@ TextEditingController controle = TextEditingController();
                 child: Column(
                   children: [
                     //sizedbox
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     // Entrer les informations necessaires
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veillez entrer les informations\n nécessaires',
                       style: TextStyle(
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 13.sp),
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     Container(
-                      height: 250,
-                      width: 350,
+                      height: 25.h,
+                      width: 80.w,
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(.8),
                         borderRadius: BorderRadius.circular(20),
@@ -78,8 +79,8 @@ TextEditingController controle = TextEditingController();
                             children: [
                               //Entrer le numero
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 25, left: 30, right: 30),
+                                padding: EdgeInsets.only(
+                                    top: 2.h, left: 7.w, right: 7.w),
                                 child: TextFormField(
                                   //style: const TextStyle(color: Color(0xFF007549),),
                                   cursorColor: const Color(0xFFc75c0c),
@@ -130,14 +131,14 @@ TextEditingController controle = TextEditingController();
                               ),
 
                               //sizebox
-                              const SizedBox(
-                                height: 10,
+                              SizedBox(
+                                height: 1.h,
                               ),
 
                               //Entrer le montant
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 10, left: 30, right: 30),
+                                padding: EdgeInsets.only(
+                                    top: 1.w, left: 7.w, right: 7.w),
                                 child: TextFormField(
                                   //style: const TextStyle(color: Color(0xFFc75c0c),),
                                   controller: controles,
@@ -188,8 +189,8 @@ TextEditingController controle = TextEditingController();
                     ),
 
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //bouton de confirmation
@@ -202,8 +203,8 @@ TextEditingController controle = TextEditingController();
                             Get.back();
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 35.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -211,12 +212,12 @@ TextEditingController controle = TextEditingController();
                                   Border.all(color: const Color(0xFF007549)),
                               color: Colors.white,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Annuler',
                               style: TextStyle(
                                   color: Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 13.sp),
                             ),
                           ),
                         ),
@@ -237,10 +238,10 @@ TextEditingController controle = TextEditingController();
                                 textConfirm: "Valider",
                                 title: 'Confirmation de paiement',
                                 titlePadding: const EdgeInsets.only(top: 20),
-                                titleStyle: const TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                titleStyle: TextStyle(
+                                    color: const Color(0xFFc75c0c),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                    fontSize: 13.sp),
                                 content: Form(
                                   key: formKey2,
                                   child: //Entrer le code PIN....................................
@@ -266,16 +267,16 @@ TextEditingController controle = TextEditingController();
                                         child: Column(
                                           children: [
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
                                             Text(
                                               'Vous êtes sur le point d\'éffecrtuer un paiement marchand de ${controles.text} via le numéro ${controle.text}',
                                               
                                             ),
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //veillez entrer le code PIN pour confirmer
@@ -287,14 +288,14 @@ TextEditingController controle = TextEditingController();
                                             ),
 
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //Zone pour entrer le PIN
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  top: 25, left: 30, right: 30),
+                                              padding: EdgeInsets.only(
+                                                  top: 2.h, left: 7.w, right: 7.w),
                                               child: TextFormField(
                                                 //style: const TextStyle(color: Color(0xFF007549),),
                                                 cursorColor:
@@ -369,10 +370,10 @@ TextEditingController controle = TextEditingController();
                                       title: 'Félicitations',
                                       titlePadding:
                                           const EdgeInsets.only(top: 20),
-                                      titleStyle: const TextStyle(
-                                          color: Color(0xFFc75c0c),
+                                      titleStyle: TextStyle(
+                                          color: const Color(0xFFc75c0c),
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 13.sp),
                                       middleText:
                                           'Vous venez d\'éffectuer un paiement marchand d\'un montant de ${controles.text} ',
                                       onConfirm: () {
@@ -385,8 +386,8 @@ TextEditingController controle = TextEditingController();
                             }
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 35.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
@@ -399,12 +400,12 @@ TextEditingController controle = TextEditingController();
                                       spreadRadius: 3,
                                       offset: const Offset(0, 2))
                                 ]),
-                            child: const Text(
+                            child: Text(
                               'Valider',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 13.sp),
                             ),
                           ),
                         ),
@@ -412,8 +413,8 @@ TextEditingController controle = TextEditingController();
                     ),
 
                     //sizedbox
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 4.h,
                     ),
                   ],
                 )),

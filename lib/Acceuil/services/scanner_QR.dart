@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:sizer/sizer.dart';
 class Scanner_QR extends StatefulWidget {
   const Scanner_QR({super.key});
 
@@ -23,8 +24,8 @@ class _effectuer_payementState extends State<Scanner_QR> {
               QRCodeScan();
             },
             child: Container(
-              height: 50,
-              width: 200,
+              height: 5.h,
+              width: 50.w,
               alignment: Alignment.center,
               decoration:
                   BoxDecoration(
@@ -37,12 +38,12 @@ class _effectuer_payementState extends State<Scanner_QR> {
                     spreadRadius: 3,
                     offset: const Offset(0, 2))
               ]),
-              child: const Text(
+              child: Text(
                 'Effectuer un payement',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 17,
-                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontSize: 14.sp,
+                  color: const Color.fromARGB(255, 255, 255, 255),
                 ),
               ),
             ),

@@ -6,6 +6,7 @@ import 'package:sahel_pay/Acceuil/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
+import 'package:sizer/sizer.dart';
 
 // ignore: camel_case_types
 class resume_couverture extends StatefulWidget {
@@ -33,8 +34,8 @@ class _resume_couvertureState extends State<resume_couverture> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: 2.h,
           ),
           //Résumé couverture My Healt..................................................................
           Column(
@@ -43,83 +44,83 @@ class _resume_couvertureState extends State<resume_couverture> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 40,
+                    height: 4.h,
                     width: MediaQuery.of(context).size.width * .9,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 1, 168, 104).withOpacity(.95),
+                      color: const Color.fromARGB(255, 1, 168, 104).withOpacity(.95),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Résumé couverture MyHealt',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 255, 255, 255),
+                          color: const Color.fromARGB(255, 255, 255, 255),
                           fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                          fontSize: 13.sp),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 5,
+              SizedBox(
+                height: .5.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      height: 55,
-                      width: 180,
+                      height: 6.h,
+                      width: 40.w,
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 215, 226, 221),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               'Maladie',
                               style: TextStyle(
-                                  color: Color(0xFFc75c0c),
+                                  color: const Color(0xFFc75c0c),
                                   //fontWeight: FontWeight.bold,
-                                  fontSize: 16),
+                                  fontSize: 12.sp),
                             ),
                             Text(
                               '000.00',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 13),
+                                  fontSize: 10.sp),
                             ),
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      height: 55,
-                      width: 180,
+                      height: 6.h,
+                      width: 40.w,
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 234, 229, 227),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               'Accident',
                               style: TextStyle(
-                                  color: Color(0xFFc75c0c),
+                                  color: const Color(0xFFc75c0c),
                                   //fontWeight: FontWeight.bold,
-                                  fontSize: 16),
+                                  fontSize: 12.sp),
                             ),
                             Text(
                               '000.00',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 13),
+                                  fontSize: 10.sp),
                             ),
                           ],
                         ),
@@ -131,90 +132,90 @@ class _resume_couvertureState extends State<resume_couverture> {
             ],
           ),
 
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: 1.h,
           ),
 
           //MyHealt Gratuit.......................................................................
           Column(
             children: [
               Container(
-                height: 40,
+                height: 4.h,
                 width: MediaQuery.of(context).size.width * .8,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color:
                       const Color.fromARGB(255, 248, 181, 122).withOpacity(.95),
                 ),
-                child: const Text(
+                child: Text(
                   'MyHealt Gratuit',
                   style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.bold,
-                      fontSize: 20),
+                      fontSize: 13.sp),
                 ),
               ),
-              const SizedBox(
-                height: 5,
+              SizedBox(
+                height: .5.h,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 40),
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      height: 55,
-                      width: 160,
+                      height: 6.h,
+                      width: 40.w,
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 215, 226, 221),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               'Maladie',
                               style: TextStyle(
-                                  color: Color(0xFFc75c0c),
+                                  color: const Color(0xFFc75c0c),
                                   //fontWeight: FontWeight.bold,
-                                  fontSize: 15),
+                                  fontSize: 12.sp),
                             ),
                             Text(
                               '000.00',
                               style: TextStyle(
                                   color: Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 13),
+                                  fontSize: 10.sp),
                             ),
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      height: 55,
-                      width: 160,
+                      height: 6.h,
+                      width: 40.w,
                       alignment: Alignment.center,
                       decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 234, 229, 227),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
                               'Accident',
                               style: TextStyle(
-                                  color: Color(0xFFc75c0c),
+                                  color: const Color(0xFFc75c0c),
                                   //fontWeight: FontWeight.bold,
-                                  fontSize: 15),
+                                  fontSize: 12.sp),
                             ),
                             Text(
                               '000.00',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 13),
+                                  fontSize: 10.sp),
                             ),
                           ],
                         ),
@@ -226,8 +227,8 @@ class _resume_couvertureState extends State<resume_couverture> {
             ],
           ),
 
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: 2.h,
           ),
 
           //Booster ici..........................................................
@@ -239,13 +240,13 @@ class _resume_couvertureState extends State<resume_couverture> {
                 Get.back();
                 Get.defaultDialog(
                   title: 'Attention !',
-                  titleStyle: const TextStyle(
-                      color: Color(0xFF007549),
-                      fontSize: 20,
+                  titleStyle: TextStyle(
+                      color: const Color(0xFF007549),
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.bold),
                   middleText: 'Voulez-vous changer de Healt ? ',
-                  middleTextStyle: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.w400),
+                  middleTextStyle: TextStyle(
+                      fontSize: 10.sp, fontWeight: FontWeight.w400),
                   textConfirm: 'OUI',
                   textCancel: 'NON',
                   buttonColor: const Color(0xFF007549),
@@ -254,10 +255,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                     Get.defaultDialog(
                       title: 'Sélectionnez le type de débit',
                       titlePadding: const EdgeInsets.all(30),
-                      titleStyle: const TextStyle(
-                        fontSize: 20,
+                      titleStyle: TextStyle(
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF007549),
+                        color: const Color(0xFF007549),
                       ),
                       content: BlocBuilder<BlocBloc16, debits_assurance_state>(
                         builder: (context, state) {
@@ -342,10 +343,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                           Get.defaultDialog(
                             title: 'Veuillez sélectionner la prime',
                             titlePadding: const EdgeInsets.all(30),
-                            titleStyle: const TextStyle(
-                              fontSize: 20,
+                            titleStyle: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF007549),
+                              color: const Color(0xFF007549),
                             ),
                             textConfirm: 'Valider',
                             textCancel: 'Annuler',
@@ -426,10 +427,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                                 middleTextStyle: const TextStyle(
                                     fontWeight: FontWeight.w400),
                                 titlePadding: const EdgeInsets.all(30),
-                                titleStyle: const TextStyle(
-                                  fontSize: 20,
+                                titleStyle: TextStyle(
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                 ),
                                 textCancel: 'Quitter',
                                 buttonColor: const Color(0xFF007549),
@@ -442,10 +443,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                           Get.defaultDialog(
                             title: 'Veuillez sélectionner la prime',
                             titlePadding: const EdgeInsets.all(30),
-                            titleStyle: const TextStyle(
-                              fontSize: 20,
+                            titleStyle: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF007549),
+                              color: const Color(0xFF007549),
                             ),
                             textConfirm: 'Valider',
                             textCancel: 'Annuler',
@@ -526,10 +527,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                                 middleTextStyle: const TextStyle(
                                     fontWeight: FontWeight.w400),
                                 titlePadding: const EdgeInsets.all(30),
-                                titleStyle: const TextStyle(
-                                  fontSize: 20,
+                                titleStyle: TextStyle(
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                 ),
                                 textCancel: 'Quitter',
                                 buttonColor: const Color(0xFF007549),
@@ -542,10 +543,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                           Get.defaultDialog(
                             title: 'Veuillez sélectionner la prime',
                             titlePadding: const EdgeInsets.all(30),
-                            titleStyle: const TextStyle(
-                              fontSize: 20,
+                            titleStyle: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF007549),
+                              color: const Color(0xFF007549),
                             ),
                             textConfirm: 'Valider',
                             textCancel: 'Annuler',
@@ -626,10 +627,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                                 middleTextStyle: const TextStyle(
                                     fontWeight: FontWeight.w400),
                                 titlePadding: const EdgeInsets.all(30),
-                                titleStyle: const TextStyle(
-                                  fontSize: 20,
+                                titleStyle: TextStyle(
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                 ),
                                 textCancel: 'Quitter',
                                 buttonColor: const Color(0xFF007549),
@@ -645,10 +646,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                 Get.defaultDialog(
                   title: 'Sélectionnez le type de débit',
                   titlePadding: const EdgeInsets.all(30),
-                  titleStyle: const TextStyle(
-                    fontSize: 20,
+                  titleStyle: TextStyle(
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF007549),
+                    color: const Color(0xFF007549),
                   ),
                   content: BlocBuilder<BlocBloc16, debits_assurance_state>(
                     builder: (context, state) {
@@ -733,8 +734,8 @@ class _resume_couvertureState extends State<resume_couverture> {
                       Get.defaultDialog(
                         title: 'Veuillez sélectionner la prime',
                         titlePadding: const EdgeInsets.all(30),
-                        titleStyle: const TextStyle(
-                          fontSize: 20,
+                        titleStyle: TextStyle(
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF007549),
                         ),
@@ -813,10 +814,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                             middleTextStyle:
                                 const TextStyle(fontWeight: FontWeight.w400),
                             titlePadding: const EdgeInsets.all(30),
-                            titleStyle: const TextStyle(
-                              fontSize: 20,
+                            titleStyle: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF007549),
+                              color: const Color(0xFF007549),
                             ),
                             textCancel: 'Quitter',
                             buttonColor: const Color(0xFF007549),
@@ -829,10 +830,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                       Get.defaultDialog(
                         title: 'Veuillez sélectionner la prime',
                         titlePadding: const EdgeInsets.all(30),
-                        titleStyle: const TextStyle(
-                          fontSize: 20,
+                        titleStyle: TextStyle(
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                         ),
                         textConfirm: 'Valider',
                         textCancel: 'Annuler',
@@ -909,10 +910,10 @@ class _resume_couvertureState extends State<resume_couverture> {
                             middleTextStyle:
                                 const TextStyle(fontWeight: FontWeight.w400),
                             titlePadding: const EdgeInsets.all(30),
-                            titleStyle: const TextStyle(
-                              fontSize: 20,
+                            titleStyle: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
-                              color: Color(0xFF007549),
+                              color: const Color(0xFF007549),
                             ),
                             textCancel: 'Quitter',
                             buttonColor: const Color(0xFF007549),
@@ -925,8 +926,8 @@ class _resume_couvertureState extends State<resume_couverture> {
                       Get.defaultDialog(
                         title: 'Veuillez sélectionner la prime',
                         titlePadding: const EdgeInsets.all(30),
-                        titleStyle: const TextStyle(
-                          fontSize: 20,
+                        titleStyle: TextStyle(
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF007549),
                         ),
@@ -1005,8 +1006,8 @@ class _resume_couvertureState extends State<resume_couverture> {
                             middleTextStyle:
                                 const TextStyle(fontWeight: FontWeight.w400),
                             titlePadding: const EdgeInsets.all(30),
-                            titleStyle: const TextStyle(
-                              fontSize: 20,
+                            titleStyle: TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF007549),
                             ),
@@ -1022,25 +1023,25 @@ class _resume_couvertureState extends State<resume_couverture> {
               //Scafold.show.defaultDialog();
             },
             child: Container(
-              height: 30,
-              width: 200,
+              height: 4.h,
+              width: 50.w,
               decoration: const BoxDecoration(
                   color: Color(0xFFff7900),
                   borderRadius: BorderRadius.all(Radius.circular(50))),
               alignment: Alignment.center,
-              child: const Text(
+              child: Text(
                 textAlign: TextAlign.center,
                 'Booster ici',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 255, 255, 255),
-                    fontSize: 20),
+                    fontSize: 14.sp),
               ),
             ),
           ),
 
-          const SizedBox(
-            height: 15,
+          SizedBox(
+            height: 1.h,
           ),
 
           //MyHealt Payant............................................................
@@ -1049,9 +1050,9 @@ class _resume_couvertureState extends State<resume_couverture> {
             child: Column(
               children: [
                 Container(
-                  height: 70,
+                  height: 7.h,
                   width: MediaQuery.of(context).size.width * .8,
-                  padding: const EdgeInsets.only(top: 5, bottom: 5),
+                  padding: EdgeInsets.only(top: .5.h, bottom: .5.h),
                   alignment: Alignment.topCenter,
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 103, 200, 195)
@@ -1060,19 +1061,19 @@ class _resume_couvertureState extends State<resume_couverture> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
+                      Text(
                         'MyHealt Payant',
                         style: TextStyle(
                             color: Color.fromARGB(255, 255, 255, 255),
                             fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                            fontSize: 13.sp),
                       ),
                       Text(
                         '$debit : $debi',
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 241, 235, 228),
+                        style: TextStyle(
+                            color: const Color.fromARGB(255, 241, 235, 228),
                             fontWeight: FontWeight.bold,
-                            fontSize: 18),
+                            fontSize: 11.sp),
                       ),
                     ],
                   ),
@@ -1081,63 +1082,63 @@ class _resume_couvertureState extends State<resume_couverture> {
                   height: 5,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        height: 55,
-                        width: 160,
+                        height: 6.h,
+                      width: 40.w,
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 215, 226, 221),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 'Maladie',
                                 style: TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                    color: const Color(0xFFc75c0c),
                                     //fontWeight: FontWeight.bold,
-                                    fontSize: 15),
+                                    fontSize: 12.sp),
                               ),
                               Text(
                                 '000.00',
                                 style: TextStyle(
-                                    color: Color(0xFF007549),
+                                    color: const Color(0xFF007549),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 13),
+                                    fontSize: 10.sp),
                               ),
                             ],
                           ),
                         ),
                       ),
                       Container(
-                        height: 55,
-                        width: 160,
+                        height: 6.h,
+                      width: 40.w,
                         alignment: Alignment.center,
                         decoration: const BoxDecoration(
                           color: Color.fromARGB(255, 234, 229, 227),
                         ),
-                        child: const Center(
+                        child: Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 'Accident',
                                 style: TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                    color: const Color(0xFFc75c0c),
                                     //fontWeight: FontWeight.bold,
-                                    fontSize: 15),
+                                    fontSize: 12.sp),
                               ),
                               Text(
                                 '000.00',
                                 style: TextStyle(
-                                    color: Color(0xFF007549),
+                                    color: const Color(0xFF007549),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 13),
+                                    fontSize: 10.sp),
                               ),
                             ],
                           ),
@@ -1167,22 +1168,22 @@ class _resume_couvertureState extends State<resume_couverture> {
                           element_appbar: const reclamation1_appbar()));
                     },
                     child: Container(
-                      height: 120,
-                      width: 200,
+                      height: 13.h,
+                      width: 49.w,
                       //padding: const EdgeInsets.only(top: 10, left: 10),
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 103, 200, 195)
                             .withOpacity(.95),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(top: 10),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10),
                         child: Column(
                           children: [
                             Text(
                               'MES DEMARCHES',
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 17,
+                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -1194,21 +1195,21 @@ class _resume_couvertureState extends State<resume_couverture> {
                     duration: const Duration(milliseconds: 500),
                     onPressed: () {},
                     child: Container(
-                      height: 120,
-                      width: 200,
+                      height: 13.h,
+                      width: 49.w,
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 248, 181, 122)
                             .withOpacity(.95),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(top: 10),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 1.h),
                         child: Column(
                           children: [
                             Text(
                               'MES DOCUMENTS',
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 17,
+                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -1218,8 +1219,8 @@ class _resume_couvertureState extends State<resume_couverture> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 1.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -1232,21 +1233,21 @@ class _resume_couvertureState extends State<resume_couverture> {
                           element_appbar: const reclamation1_appbar()));
                     },
                     child: Container(
-                      height: 120,
-                      width: 200,
+                      height: 13.h,
+                      width: 49.w,
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 248, 181, 122)
                             .withOpacity(.95),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(top: 10),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 1.h),
                         child: Column(
                           children: [
                             Text(
                               'MES INFORMATIONS',
                               style: TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 17,
+                                  color: const Color.fromARGB(255, 255, 255, 255),
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -1259,24 +1260,25 @@ class _resume_couvertureState extends State<resume_couverture> {
                     onPressed: () {
                       context.read<BlocBloc3>().add(Barre_navigation(
                           element_body: const ajouter_couverture(),
-                          element_appbar: const reclamation1_appbar()));
+                          element_appbar: const reclamation1_appbar())
+                          );
                     },
                     child: Container(
-                      height: 120,
-                      width: 200,
+                      height: 13.h,
+                      width: 49.w,
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 103, 200, 195)
                             .withOpacity(.95),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(top: 10),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 1.h),
                         child: Column(
                           children: [
                             Text(
                               'AJOUTER COUVERTURE',
                               style: TextStyle(
                                   color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 17,
+                                  fontSize: 12.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -1315,10 +1317,10 @@ class _Souscrir_pour_moiState extends State<Souscrir_pour_moi> {
             Icons.arrow_back,
             color: Colors.white,
           )),
-      const SizedBox(
-        width: 50,
+      SizedBox(
+        width: 12.w,
       ),
-      Image.asset(height: 150, width: 250, 'images/Sahel_Assurance.png')
+      Image.asset(height: 16.h, width: 60.w, 'images/Sahel_Assurance.png')
     ]);
   }
 }

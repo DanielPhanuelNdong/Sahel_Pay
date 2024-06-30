@@ -6,6 +6,8 @@ import 'package:sahel_pay/Acceuil/services/index.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_bloc.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_event.dart';
 import 'package:sahel_pay/features/bloc/presentation/bloc/bloc_state.dart';
+import 'package:sizer/sizer.dart';
+
 class retrait extends StatefulWidget {
   const retrait({super.key});
 
@@ -20,10 +22,7 @@ class _retraitState extends State<retrait> {
 //String control2 = controle.text;
   final formKey = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
-  final List<String> mode_transferts = [
-    'Agent ',
-    'SOWITEL Gab'
-  ];
+  final List<String> mode_transferts = ['Agent ', 'SOWITEL Gab'];
 
   String current_options = "";
   @override
@@ -36,116 +35,122 @@ class _retraitState extends State<retrait> {
         ),
 
         //selection du mode de retrait
-        const Text(
+        Text(
           'Veillez sélectionner le mode de retrait',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 17,
-            color: Color(0xFFc75c0c),
+            fontSize: 14.sp,
+            color: const Color(0xFFc75c0c),
           ),
         ),
 
         //sizedbox
-        const SizedBox(
-          height: 35,
+        SizedBox(
+          height: 4.h,
         ),
 
         //modes utilisés
         SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: BlocBuilder<BlocBloc7, Modes_retrait_state>(
-            builder: (context, state) {
-              return Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              InkWell(
-                onTap: () {
-                  
-                },
-                child: Container(
-                  height: 100,
-                  width: 150,
-                  child: ListTile(
-                      leading: Radio(
-                        focusNode: FocusNode(),
-                        value: mode_transferts[0],
-                        groupValue: state.mode == mode_transferts[0] ? mode_transferts[0] : '' ,
-                        onChanged: (value) {
-                          context.read<BlocBloc7>().add(Modes_retrait(mode: mode_transferts[0]));
-                        },
+            scrollDirection: Axis.horizontal,
+            child: BlocBuilder<BlocBloc7, Modes_retrait_state>(
+              builder: (context, state) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 10.h,
+                        width: 40.w,
+                        child: ListTile(
+                            leading: Radio(
+                              focusNode: FocusNode(),
+                              value: mode_transferts[0],
+                              groupValue: state.mode == mode_transferts[0]
+                                  ? mode_transferts[0]
+                                  : '',
+                              onChanged: (value) {
+                                context.read<BlocBloc7>().add(
+                                    Modes_retrait(mode: mode_transferts[0]));
+                              },
+                            ),
+                            title: Text(
+                              mode_transferts[0],
+                              style: TextStyle(
+                                  fontSize: 10.sp, fontWeight: FontWeight.bold),
+                            )),
                       ),
-                      title: Text(
-                        mode_transferts[0],
-                        style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold),
-                      )),
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  
-                },
-                child: Container(
-                  height: 100,
-                  width: 170,
-                  child: ListTile(
-                      leading: Radio(
-                        value: mode_transferts[1],
-                        groupValue: state.mode == mode_transferts[1] ? mode_transferts[1] : '' ,
-                        onChanged: (value) {
-                          context.read<BlocBloc7>().add(Modes_retrait(mode: mode_transferts[1]));
-                        },
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 10.h,
+                        width: 50.w,
+                        child: ListTile(
+                            leading: Radio(
+                              value: mode_transferts[1],
+                              groupValue: state.mode == mode_transferts[1]
+                                  ? mode_transferts[1]
+                                  : '',
+                              onChanged: (value) {
+                                context.read<BlocBloc7>().add(
+                                    Modes_retrait(mode: mode_transferts[1]));
+                              },
+                            ),
+                            title: Text(
+                              mode_transferts[1],
+                              style: TextStyle(
+                                  fontSize: 10.sp, fontWeight: FontWeight.bold),
+                            )),
                       ),
-                      title: Text(
-                        mode_transferts[1],
-                        style: const TextStyle(
-                            fontSize: 13, fontWeight: FontWeight.bold),
-                      )),
-                ),
-              )
-            ],
-          );
-            },
-            )
+                    )
+                  ],
+                );
+              },
+            )),
+
+        SizedBox(
+          height: 1.5.h,
         ),
 
         //bouton de retrait.......................................................................
-            //boite de dialogue pour entrer le numero et le montant............................................
-            BlocBuilder<BlocBloc12, retrait_confirm_state>(
-              builder: (context, state) {
-              return GestureDetector(
-                onTap: () {
-                  print(state.val);
-                  state.val == true ? context.read<BlocBloc3>().add(Barre_navigation(element_body: const Detail_retrait(), element_appbar: appbar_home())) : retraits();
-                },
-                child: Container(
-            height: 50,
-            width: 200,
-            alignment: Alignment.center,
-            decoration:
-                BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: const Color(0xFF007549),
-                  boxShadow: [
-              BoxShadow(
-                  color: const Color(0xFF007549).withOpacity(.255),
-                  blurRadius: 3,
-                  spreadRadius: 3,
-                  offset: const Offset(0, 2))
-            ]),
-            child: const Text(
-              'Effectuer un Retrait',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 17,
-                color: Color.fromARGB(255, 255, 255, 255),
-              ),
-            ),
-          ),
-              );
+        //boite de dialogue pour entrer le numero et le montant............................................
+        BlocBuilder<BlocBloc12, retrait_confirm_state>(
+          builder: (context, state) {
+            return GestureDetector(
+              onTap: () {
+                state.val == true
+                    ? context.read<BlocBloc3>().add(Barre_navigation(
+                        element_body: const Detail_retrait(),
+                        element_appbar: appbar_home()))
+                    : retraits();
               },
-            ),
-        
+              child: Container(
+                height: 6.h,
+                width: 50.w,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFF007549),
+                    boxShadow: [
+                      BoxShadow(
+                          color: const Color(0xFF007549).withOpacity(.255),
+                          blurRadius: 3,
+                          spreadRadius: 3,
+                          offset: const Offset(0, 2))
+                    ]),
+                child: Text(
+                  'Effectuer un Retrait',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.sp,
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
       ]),
     );
   }
@@ -174,107 +179,103 @@ class _retraitState extends State<retrait> {
                 child: Column(
                   children: [
                     //sizedbox
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: 3.h,
                     ),
 
                     // Entrer les informations necessaires
-                    const Text(
+                    Text(
                       textAlign: TextAlign.center,
                       'Veillez entrer les informations\n nécessaires',
                       style: TextStyle(
-                          color: Color(0xFF007549),
+                          color: const Color(0xFF007549),
                           fontWeight: FontWeight.bold,
-                          fontSize: 25),
+                          fontSize: 13.sp),
                     ),
 
                     //sizebox
-                      const SizedBox(
-                        height: 20,
-                      ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
 
                     Container(
-                      height: 116,
-                      width: 350,
+                      height: 13.h,
+                      width: 80.w,
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(.8),
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(.1),
-                            blurRadius: 4,
-                            spreadRadius: 3,
-                            offset: const Offset(0, 2)
-                          )
-                        ]
-                      ),
+                          color: Colors.white.withOpacity(.8),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(.1),
+                                blurRadius: 4,
+                                spreadRadius: 3,
+                                offset: const Offset(0, 2))
+                          ]),
                       child: SingleChildScrollView(
                         child: Center(
                           child: Column(
                             children: [
                               //sizebox
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          
-                          //Entrer le montant
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(top: 10, left: 30, right: 30),
-                            child: TextFormField(
-                              //style: const TextStyle(color: Color(0xFFc75c0c),),
-                              controller: controle,
-                              keyboardType: TextInputType.number,
-                              decoration: const InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFc75c0c),
-                                  ),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Color(0xFFc75c0c),
-                                  ),
-                                ),
-                                labelStyle: TextStyle(
-                                  color: Color(0xFFc75c0c),
-                                ),
-                                
-                                errorBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  color: Color(0xFF007549),
-                                )),
-                                errorStyle: TextStyle(
-                                  color: Color(0xFF007549),
-                                ),
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                  width: 3,
-                                  color: Color(0xFFc75c0c),
-                                )),
-                                labelText: 'Entrez le montant',
+                              SizedBox(
+                                height: 1.h,
                               ),
-                              validator: (value) {
-                                if (value!.isEmpty ||
-                                    !RegExp(r'^[0-9]{4,10}$').hasMatch(value)) {
-                                  return 'Veuillez entrer un montant correct';
-                                } else {
-                                  return null;
-                                }
-                              },
-                            ),
-                          ),
+
+                              //Entrer le montant
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10, left: 30, right: 30),
+                                child: TextFormField(
+                                  //style: const TextStyle(color: Color(0xFFc75c0c),),
+                                  controller: controle,
+                                  keyboardType: TextInputType.number,
+                                  decoration: const InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFc75c0c),
+                                      ),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFc75c0c),
+                                      ),
+                                    ),
+                                    labelStyle: TextStyle(
+                                      color: Color(0xFFc75c0c),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                      color: Color(0xFF007549),
+                                    )),
+                                    errorStyle: TextStyle(
+                                      color: Color(0xFF007549),
+                                    ),
+                                    border: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                      width: 3,
+                                      color: Color(0xFFc75c0c),
+                                    )),
+                                    labelText: 'Entrez le montant',
+                                  ),
+                                  validator: (value) {
+                                    if (value!.isEmpty ||
+                                        !RegExp(r'^[0-9]{4,10}$')
+                                            .hasMatch(value)) {
+                                      return 'Veuillez entrer un montant correct';
+                                    } else {
+                                      return null;
+                                    }
+                                  },
+                                ),
+                              ),
                             ],
                           ),
                         ),
                       ),
                     ),
 
-                    
-
                     //sizebox
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     //bouton de confirmation
@@ -287,8 +288,8 @@ class _retraitState extends State<retrait> {
                             Get.back();
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 25.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -296,12 +297,12 @@ class _retraitState extends State<retrait> {
                                   Border.all(color: const Color(0xFF007549)),
                               color: Colors.white,
                             ),
-                            child: const Text(
+                            child: Text(
                               'Annuler',
                               style: TextStyle(
-                                  color: Color(0xFF007549),
+                                  color: const Color(0xFF007549),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 10.sp),
                             ),
                           ),
                         ),
@@ -322,15 +323,15 @@ class _retraitState extends State<retrait> {
                                 textConfirm: "Valider",
                                 title: 'Confirmation de retrait',
                                 titlePadding: const EdgeInsets.only(top: 20),
-                                titleStyle: const TextStyle(
-                                    color: Color(0xFFc75c0c),
+                                titleStyle: TextStyle(
+                                    color: const Color(0xFFc75c0c),
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                                    fontSize: 10.sp),
                                 content: Form(
                                   key: formKey2,
                                   child: //Entrer le code PIN....................................
                                       Container(
-                                    height: 250,
+                                    height: 30.h,
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
                                         color: Colors.white.withOpacity(.4),
@@ -351,16 +352,15 @@ class _retraitState extends State<retrait> {
                                         child: Column(
                                           children: [
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
                                             Text(
                                               'Vous êtes sur le point d\'éffecrtuer un retrait de ${controle.text} sur votre compte Sahel Money',
-                                              
                                             ),
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //veillez entrer le code PIN pour confirmer
@@ -372,8 +372,8 @@ class _retraitState extends State<retrait> {
                                             ),
 
                                             //sizedbox
-                                            const SizedBox(
-                                              height: 10,
+                                            SizedBox(
+                                              height: 1.h,
                                             ),
 
                                             //Zone pour entrer le PIN
@@ -454,17 +454,23 @@ class _retraitState extends State<retrait> {
                                       title: 'Félicitations',
                                       titlePadding:
                                           const EdgeInsets.only(top: 20),
-                                      titleStyle: const TextStyle(
-                                          color: Color(0xFFc75c0c),
+                                      titleStyle: TextStyle(
+                                          color: const Color(0xFFc75c0c),
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 20),
+                                          fontSize: 10.sp),
                                       middleText:
                                           'Vous venez d\'éffectuer un retrait d\'un montant de ${controle.text} de votre compte Sahel Money',
                                       onConfirm: () {
                                         Get.back();
                                         //afficharge du rapport de retrait effectué
-                                        context.read<BlocBloc12>().add(retrait_confirm(val: true));
-                                        context.read<BlocBloc3>().add(Barre_navigation(element_body: const Detail_retrait(), element_appbar: appbar_home()));
+                                        context
+                                            .read<BlocBloc12>()
+                                            .add(retrait_confirm(val: true));
+                                        context.read<BlocBloc3>().add(
+                                            Barre_navigation(
+                                                element_body:
+                                                    const Detail_retrait(),
+                                                element_appbar: appbar_home()));
                                         // BlocBuilder<BlocBloc3, Barre_navigation_satate>(
                                         //   builder: (context, state) {
                                         //     return Container();
@@ -475,29 +481,29 @@ class _retraitState extends State<retrait> {
                                   }
                                 },
                               );
-                            
-                              }
+                            }
                           },
                           child: Container(
-                            height: 40,
-                            width: 150,
+                            height: 4.h,
+                            width: 25.w,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: const Color(0xFF007549),
                                 boxShadow: [
                                   BoxShadow(
-                                      color: const Color(0xFF007549).withOpacity(.255),
+                                      color: const Color(0xFF007549)
+                                          .withOpacity(.255),
                                       blurRadius: 3,
                                       spreadRadius: 3,
                                       offset: const Offset(0, 2))
                                 ]),
-                            child: const Text(
+                            child: Text(
                               'Valider',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 20),
+                                  fontSize: 10.sp),
                             ),
                           ),
                         ),
@@ -505,8 +511,8 @@ class _retraitState extends State<retrait> {
                     ),
 
                     //sizedbox
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 4.h,
                     ),
                   ],
                 )),
@@ -514,10 +520,7 @@ class _retraitState extends State<retrait> {
         ),
       ),
     ));
-  
-  
   }
-
 }
 
 // Widget retrait(){
